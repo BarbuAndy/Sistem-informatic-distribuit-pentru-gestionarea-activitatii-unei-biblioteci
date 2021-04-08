@@ -1,5 +1,6 @@
 V1.0
 -models, views and basic controllers have been created
+-basic database created, more fields should be added
 
 V1.1
 -books can be added and removed from the database
