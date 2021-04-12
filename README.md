@@ -9,3 +9,6 @@ V1.1
 V1.2
 -book info cand be edited and pushed to the data base
 -when editing book info, fields left empty will remain the same
+
+V1.3
+-same functionalities as before implemented using repositories and services
