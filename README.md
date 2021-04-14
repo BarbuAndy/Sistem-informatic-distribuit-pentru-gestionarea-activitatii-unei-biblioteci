@@ -12,3 +12,9 @@ V1.2
 
 V1.3
 -same functionalities as before implemented using repositories and services
+
+v1.4
+-same functionalities as before implemented using repositories, services and middleware models between view and services
+-books are added by completing the title and author name, bookId is automatically incremented | authorId is automatically
+-books cannot be added if the author name is not in the data base
+-books can be edited or deleted by title
