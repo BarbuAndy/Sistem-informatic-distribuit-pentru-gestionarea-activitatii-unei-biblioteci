@@ -18,3 +18,9 @@ v1.4
 -books are added by completing the title and author name, bookId is automatically incremented | authorId is automatically set 
 -books cannot be added if the author name is not in the data base
 -books can be edited or deleted by title
+
+V1.5
+-genre added to books,all are functionalities compatible
+-birth date and deceased status added to authors
+-authors can be added, edited and deleted from front end
+
