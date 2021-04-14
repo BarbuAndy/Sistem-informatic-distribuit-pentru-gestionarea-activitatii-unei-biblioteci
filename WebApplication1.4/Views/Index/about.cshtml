@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "about";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/aboutStyle.css")" />
+
+
+</head>
+<body>
+
+    <ul class="center">
+        <li><a asp-controller="Index" asp-action="Index"><h2>Home</h2></a></li>
+        <li><a asp-controller="Index" asp-action="Books"><h2>Books</h2></a></li>
+        <li><a asp-controller="Index" asp-action="BookSpecial"><h2>Book of the day</h2></a></li>
+        <li><a asp-controller="Index" asp-action="About"><h2>About</h2></a></li>
+        <li><a asp-controller="Index" asp-action="Account"><h2>Account</h2></a></li>
+        <li><a asp-controller="Index" asp-action="Admin"><h2> Admin<br />privileges</h2></a></li>
+    </ul>
+
+
+
+    <div class="divBg">
+        <b>Biblioteca Județeană ”[Adauga numele aici]”</b> <br />
+        str. M. Kogalniceanu nr.9, <br />
+        tel.: 0251-532267, 0351-441809, 0351-441810, fax: 0251-523177 <br />
+        e-mail: bib@aman.ro <br /><br />
+
+        <b>Filiale</b><br />
+        Filiala nr.1: Cartier Brazda lui Novac, Bloc G8, parter. Tel.: 0351 432 072;<br />
+        Filiala nr.2: Cartier Craioviţa Nouă, Complex Orizont, parter. Tel.: 0351 432 073;<br />
+        Filiala nr.3: Cartier Valea Roşie, Bloc 52, sc. 1, ap. 1. Tel.: 0351 432 071;<br />
+        Filiala nr.4: Cartier Rovine, Bloc E21, sc. 2, ap. 1. Tel.: 0351 432 070.<br />
+        <br /><br />
+
+        ***De adaugat harta adevarata, nu poza.***
+        <div class="divMap">
+            <img src="..\images\map.png" />
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>
+
