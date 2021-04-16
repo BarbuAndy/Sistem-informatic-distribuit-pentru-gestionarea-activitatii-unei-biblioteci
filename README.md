@@ -25,4 +25,4 @@ V1.5
 -authors can be added, edited and deleted from front end
 
 V1.5.2
--when adding a new book, the list of authors automatically pops-up for easier author select
+-when adding a new book, the list of authors automatically pops-up for easier author select  ----to be added to all fields
