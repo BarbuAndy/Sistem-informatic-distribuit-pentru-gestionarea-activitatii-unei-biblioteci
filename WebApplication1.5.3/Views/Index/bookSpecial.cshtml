@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "bookSpecial";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/bookSpecialStyle.css")" />
+
+
+</head>
+<body>
+
+    <ul class="center">
+        <li><a asp-controller="Index" asp-action="Index"><h2>Home</h2></a></li>
+        <li><a asp-controller="Index" asp-action="Books"><h2>Books</h2></a></li>
+        <li><a asp-controller="Index" asp-action="BookSpecial"><h2>Book of the day</h2></a></li>
+        <li><a asp-controller="Index" asp-action="About"><h2>About</h2></a></li>
+        <li><a asp-controller="Index" asp-action="Account"><h2>Account</h2></a></li>
+        <li><a asp-controller="Index" asp-action="Admin"><h2> Admin<br />privileges</h2></a></li>
+    </ul>
+
+
+
+    <div class="divBg">
+        <img id="bodd" src="..\images\book_of_the_day.jpg">
+        <p>
+            From the author of the phenomenal #1 New York Times bestseller Tuesdays with Morrie,
+            a novel that explores the unexpected connections of our lives, and the idea that
+            heaven is more than a place; it's an answer.
+            <br />
+            Eddie is a wounded war veteran, an old man who has lived,
+            in his mind, an uninspired life. His job is fixing rides at a
+            seaside amusement park. On his 83rd birthday, a tragic accident kills
+            him as he tries to save a little girl from a falling cart.
+            He awakes in the afterlife, where he learns that heaven is not a destination.
+            It's a place where your life is explained to you by five people,
+            some of whom you knew, others who may have been strangers.
+            One by one, from childhood to soldier to old age,
+            Eddie's five people revisit their connections to him on earth,
+            illuminating the mysteries of his "meaningless" life,
+            and revealing the haunting secret behind the eternal question: "Why was I here?"
+        </p>
+    </div>
+
+</body>
+</html>
+
