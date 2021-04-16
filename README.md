@@ -26,3 +26,7 @@ V1.5
 
 V1.5.2
 -when adding a new book, the list of authors automatically pops-up for easier author select  ----to be added to all fields
+
+V1.5.3
+-list of books automatically pops-up when deleting books
+-list of books and list of authors pops-up when title/author name is entered
