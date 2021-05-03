@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Coduri2.0\\Semestru 2 jale\\WebApplication\\WebApplication.csproj": {}
+    "E:\\facultate\\Proiect Databases\\WebApplication1.5\\WebApplication.csproj": {}
   },
   "projects": {
-    "E:\\Coduri2.0\\Semestru 2 jale\\WebApplication\\WebApplication.csproj": {
+    "E:\\facultate\\Proiect Databases\\WebApplication1.5\\WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Coduri2.0\\Semestru 2 jale\\WebApplication\\WebApplication.csproj",
+        "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApplication1.5\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "E:\\Coduri2.0\\Semestru 2 jale\\WebApplication\\WebApplication.csproj",
-        "packagesPath": "C:\\Users\\barbu\\.nuget\\packages\\",
-        "outputPath": "E:\\Coduri2.0\\Semestru 2 jale\\WebApplication\\obj\\",
+        "projectPath": "E:\\facultate\\Proiect Databases\\WebApplication1.5\\WebApplication.csproj",
+        "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
+        "outputPath": "E:\\facultate\\Proiect Databases\\WebApplication1.5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\barbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
