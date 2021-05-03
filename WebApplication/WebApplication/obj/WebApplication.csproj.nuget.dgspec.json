@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\facultate\\Recreare Proiect\\WebApplication\\WebApplication\\WebApplication\\WebApplication.csproj": {}
+    "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\WebApplication.csproj": {}
   },
   "projects": {
-    "E:\\facultate\\Recreare Proiect\\WebApplication\\WebApplication\\WebApplication\\WebApplication.csproj": {
+    "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\facultate\\Recreare Proiect\\WebApplication\\WebApplication\\WebApplication\\WebApplication.csproj",
+        "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "E:\\facultate\\Recreare Proiect\\WebApplication\\WebApplication\\WebApplication\\WebApplication.csproj",
+        "projectPath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\WebApplication.csproj",
         "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
-        "outputPath": "E:\\facultate\\Recreare Proiect\\WebApplication\\WebApplication\\WebApplication\\obj\\",
+        "outputPath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",

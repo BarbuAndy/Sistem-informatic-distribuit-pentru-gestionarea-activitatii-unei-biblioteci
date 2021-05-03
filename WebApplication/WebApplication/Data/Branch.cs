@@ -9,7 +9,6 @@ namespace WebApplication.Data
     {
         public int BranchId { get; set; }
 
-        public int LibraryId { get; set; }
         public string Name { get; set; }
         public Library Library { get; set; }
         

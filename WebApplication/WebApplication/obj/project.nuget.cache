@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bEUg2LihOhtAFbfZjJMbxqN1aImsIDZzvKcvcpWTuhhIhJNtJtGCh30sXDszksWT6fxhYR6Bqqv2y1zAdRm00Q==",
+  "dgSpecHash": "6GRtunQsEt9wpKHnVkSTR+kK+PJI6QhjWAPzRd1ohLxsYAA6z/IgMyU267DNSrsmVmQU1RvDh1ZRlFbmWc/ZZA==",
   "success": true,
-  "projectFilePath": "E:\\facultate\\Recreare Proiect\\WebApplication\\WebApplication\\WebApplication\\WebApplication.csproj",
+  "projectFilePath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.13\\microsoft.aspnetcore.cryptography.internal.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.13\\microsoft.aspnetcore.cryptography.keyderivation.3.1.13.nupkg.sha512",
