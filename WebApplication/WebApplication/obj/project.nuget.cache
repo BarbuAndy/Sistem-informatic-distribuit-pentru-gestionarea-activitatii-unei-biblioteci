@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6GRtunQsEt9wpKHnVkSTR+kK+PJI6QhjWAPzRd1ohLxsYAA6z/IgMyU267DNSrsmVmQU1RvDh1ZRlFbmWc/ZZA==",
+  "dgSpecHash": "fnwmAS7ZfDiwEnsEeo1wxANUnYz9C3YnCydKXv4N/2XeHs+gVkSyK0qIPe0wwEvGxyHcfviMYDx39ngHBEEVbg==",
   "success": true,
   "projectFilePath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj",
   "expectedPackageFiles": [
@@ -53,7 +53,10 @@
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\mysqlconnector\\0.61.0\\mysqlconnector.0.61.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.1.2\\pomelo.entityframeworkcore.mysql.3.1.2.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

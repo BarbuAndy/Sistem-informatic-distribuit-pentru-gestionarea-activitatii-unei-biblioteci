@@ -14,9 +14,13 @@ namespace WebApplication.Services
 
         private readonly AuthorService _authorService;
         public BookService(IRepositoryWrapper repositoryWrapper, AuthorService authorService) : base(repositoryWrapper) {
-            _authorService = authorService;
-            
+            _authorService = authorService;        
         
+        }
+
+        public IEnumerable<Book> GetAll()
+        {
+            return repositoryWrapper.BookRepository.FindByCondition(b => b.BookId != 0);
         }
         public void AddBook(BookModel book)
         {
@@ -27,7 +31,7 @@ namespace WebApplication.Services
             Author book_author = new Author();
             book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault();
 
-            new_book.AuthorId = book_author.AuthorId;
+            new_book.Author.AuthorId = book_author.AuthorId;
             repositoryWrapper.BookRepository.Create(new_book);
         }
 
@@ -36,7 +40,7 @@ namespace WebApplication.Services
             Book updated_book = new Book();
             updated_book = GetBooksByCondition(b => b.Title == book.Title).First();
             if(book.AuthorName!=null)
-            updated_book.AuthorId = (_authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault()).AuthorId;
+            updated_book.Author.AuthorId = (_authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault()).AuthorId;
             if (book.Genre != null)
             {
                 updated_book.Genre = book.Genre;
@@ -45,7 +49,7 @@ namespace WebApplication.Services
             repositoryWrapper.BookRepository.Update(updated_book);
         }
 
-        public List<Book> GetBooksByCondition(Expression<Func<Book, bool>> expression)
+        public IEnumerable<Book> GetBooksByCondition(Expression<Func<Book, bool>> expression)
         {
             return repositoryWrapper.BookRepository.FindByCondition(expression).ToList();
         }

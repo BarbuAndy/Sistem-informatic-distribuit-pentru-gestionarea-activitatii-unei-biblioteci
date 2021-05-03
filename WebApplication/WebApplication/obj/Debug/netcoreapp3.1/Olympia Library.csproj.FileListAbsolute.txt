@@ -101,3 +101,8 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.pdb
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.genruntimeconfig.cache
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.csprojAssemblyReference.cache
+E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs

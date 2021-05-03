@@ -1,0 +1,30 @@
+﻿@model Olympia_Library.Models.BookModel.BookIndexModel
+
+<div class="container">
+    <div class="row">
+        <table class="table table-hover table-bordered">
+            <tbody>
+                @foreach (var genre in Model.GenreList)
+                {
+                <tr>
+                    <td>
+                        Genre: @genre.Name
+                    </td>
+                    @foreach (var book in Model.BookListing)
+                    {
+                        if (book.Genre == genre)
+                        {
+                            <td>
+                                <div class="bookCell" style="background-image:url(@book.ImageUrl)">
+
+                                </div>
+                            </td>
+                        }
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+        
+    </div>
+</div>

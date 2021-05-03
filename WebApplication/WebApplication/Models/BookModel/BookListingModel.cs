@@ -1,10 +1,14 @@
 ﻿using Olympia_Library.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WebApplication.Data;
 
-namespace WebApplication.Data
+namespace Olympia_Library.Models.BookModel
 {
-    public class Book
+    public class BookListingModel
     {
-        public int BookId { get; set; }
         public string Title { get; set; }
         public Genre Genre { get; set; }
         public Author Author { get; set; }

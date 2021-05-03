@@ -9,6 +9,7 @@ namespace WebApplication.Repositories
     {
         IBookRepository BookRepository { get; }
         IAuthorRepository AuthorRepository { get; }
+        IGenreRepository GenreRepository { get; }
 
         void Save();
     }

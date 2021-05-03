@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Olympia_Library.Data;
 using WebApplication.Data;
 
 namespace WebApplication.Repositories
@@ -11,6 +12,7 @@ namespace WebApplication.Repositories
         private ApplicationDbContext _db;
         private IBookRepository _bookRepository;
         private IAuthorRepository _authorRepository;
+        private IGenreRepository _genreRepository;
 
 
         public RepositoryWrapper(ApplicationDbContext db)
@@ -39,6 +41,17 @@ namespace WebApplication.Repositories
                     _authorRepository = new AuthorRepository(_db);
                 }
                 return _authorRepository;
+            }
+        }
+        public IGenreRepository GenreRepository
+        {
+            get
+            {
+                if (_genreRepository == null)
+                {
+                    _genreRepository = new GenreRepository(_db);
+                }
+                return _genreRepository;
             }
         }
 

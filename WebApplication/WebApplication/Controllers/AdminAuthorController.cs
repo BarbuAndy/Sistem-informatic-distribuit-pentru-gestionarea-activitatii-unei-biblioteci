@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication.Services;
 using WebApplication.Models;
+using System.Threading.Tasks;
 
 namespace WebApplication.Controllers
 {
@@ -46,11 +47,11 @@ namespace WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult RemoveAuthor(AuthorModel Author)
+        public async Task<ActionResult> RemoveAuthor(AuthorModel Author)
         {
             try
             {
-                _authorService.DeleteAuthor(Author);
+                await _authorService.DeleteAuthor(Author);
                 _authorService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
@@ -59,7 +60,7 @@ namespace WebApplication.Controllers
             {
                 ViewData["Message"] = "0";
             }
-            return View();
+            return RedirectToAction("Index", "Home");
 
         }
 
