@@ -13,10 +13,10 @@ namespace Olympia_Library.Controllers
     {
         private readonly BookService _bookService;
         private readonly IRepositoryWrapper _repositoryWrapper;
-        public BookController(BookService bookService)
+        public BookController(BookService bookService, IRepositoryWrapper repositoryWrapper)
         {
             _bookService = bookService;
-
+            _repositoryWrapper = repositoryWrapper;
         }
 
         public IActionResult Index()
