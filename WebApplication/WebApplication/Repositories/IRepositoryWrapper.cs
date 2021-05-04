@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebApplication.Repositories
+{
+    public interface IRepositoryWrapper
+    {
+        IBookRepository BookRepository { get; }
+        IAuthorRepository AuthorRepository { get; }
+        IGenreRepository GenreRepository { get; }
+
+        void Save();
+    }
+}
