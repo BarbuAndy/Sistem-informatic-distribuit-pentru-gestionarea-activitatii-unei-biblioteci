@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Data
+﻿namespace Olympia_Library.Data
 {
     public class Stock
     {

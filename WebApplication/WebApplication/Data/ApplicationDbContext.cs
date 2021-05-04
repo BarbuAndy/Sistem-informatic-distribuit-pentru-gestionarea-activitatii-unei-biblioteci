@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebApplication.Data
+namespace Olympia_Library.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

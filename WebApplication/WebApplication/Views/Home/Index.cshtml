@@ -1,30 +1,25 @@
-﻿@{
+﻿@model Olympia_Library.Models.HomeModel.HomeIndexModel 
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
-<html>
+
 <head>
 
 
     <title></title>
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/indexStyle.css")" />
+    @*<link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/indexStyle.css")" />*@
 
 
 </head>
-<body>
 
-    <ul class="center">
-        <li><a asp-controller="Index" asp-action="Index"><h2>Home</h2></a></li>
-        <li><a asp-controller="Book" asp-action="Index"><h2>Books</h2></a></li>
-        <li><a asp-controller="Index" asp-action="BookSpecial"><h2>Book of the day</h2></a></li>
-        <li><a asp-controller="Index" asp-action="About"><h2>About</h2></a></li>
-        <li><a asp-controller="Index" asp-action="Account"><h2>Account</h2></a></li>
-        <li><a asp-controller="Index" asp-action="Admin"><h2> Admin<br />privileges</h2></a></li>
-    </ul>
 
-    <div class="divBg">
+
+
+    @*<div class="divBg">
         Citim împreună.
         Rămânem împreună.
         Stăm acasă!
@@ -35,7 +30,6 @@
         un număr consistent de utilizatori. Ne dorim ca, împreună cu stakeholderii noștri,
         să desfășurăm o serie de activități interactive pentru cititorii care, în vremuri normale,
         frecventează biblioteca în număr mare.
-    </div>
+    </div>*@
 
-</body>
-</html>
+

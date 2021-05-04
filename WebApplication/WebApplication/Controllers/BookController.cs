@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Olympia_Library.Data;
 using Olympia_Library.Models.BookModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
+using WebApplication.Models;
 using WebApplication.Repositories;
 using WebApplication.Services;
 
@@ -13,10 +16,12 @@ namespace Olympia_Library.Controllers
     {
         private readonly BookService _bookService;
         private readonly IRepositoryWrapper _repositoryWrapper;
-        public BookController(BookService bookService, IRepositoryWrapper repositoryWrapper)
+        private readonly AuthorService _authorService;
+        public BookController(BookService bookService, IRepositoryWrapper repositoryWrapper, AuthorService authorService)
         {
             _bookService = bookService;
             _repositoryWrapper = repositoryWrapper;
+            _authorService = authorService;
         }
 
         public IActionResult Index()
@@ -42,5 +47,86 @@ namespace Olympia_Library.Controllers
             return View(model);
         }
 
+        public IActionResult Create()
+        {
+            var model = new NewBookModel();
+            return View(model);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult AddBook(NewBookModel book)
+        {
+            Book new_book = new Book
+            {
+                Title = book.Title,
+                Genre = book.Genre
+            };
+
+            Author book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault();
+
+            new_book.Author = book_author;
+
+            try
+            {
+                _bookService.AddBook(new_book);
+                _bookService.Save();
+                ModelState.Clear();
+                ViewData["Message"] = "1";
+            }
+            catch
+            {
+                ViewData["Message"] = "0";
+            }
+
+            return View();
+
+        }
+
+
+        
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult RemoveBook(int id)
+        {
+            var deletedBook = _bookService.GetBooksByCondition(b => b.BookId == id).FirstOrDefault();
+
+            try
+            {
+                _bookService.DeleteBook(deletedBook);
+                _bookService.Save();
+                ModelState.Clear();
+                ViewData["Message"] = "1";
+            }
+            catch
+            {
+                ViewData["Message"] = "0";
+            }
+            return RedirectToAction("Index", "Book");
+        }
+
+
+
+        
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+
+        public ActionResult EditBook(NewBookModel book)
+        {
+            try
+            {
+                _bookService.UpdateBook(book);
+                _bookService.Save();
+                ModelState.Clear();
+                ViewData["Message"] = ViewData["Message"] + "1";
+            }
+            catch
+            {
+                ViewData["Message"] = ViewData["Message"] + "0";
+            }
+            return RedirectToAction("Detail", "Book");
+        }
     }
 }

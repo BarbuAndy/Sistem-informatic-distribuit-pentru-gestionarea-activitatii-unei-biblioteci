@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace WebApplication.Data.Migrations
+namespace Olympia_Library.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

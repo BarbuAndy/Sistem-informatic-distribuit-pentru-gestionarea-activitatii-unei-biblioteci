@@ -1,4 +1,4 @@
-﻿@model WebApplication.Models.BookModel
+﻿@model WebApplication.Models.NewBookModel
 
 @{
     ViewData["Title"] = "admin";
@@ -11,7 +11,7 @@
 
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/CSS/accountStyle.css")" />
+    
 
 </head>
 
@@ -19,19 +19,12 @@
 
 <body>
 
-    <ul class="center">
-        <li><a asp-controller="Index" asp-action="Index"><h2>Home</h2></a></li>
-        <li><a asp-controller="Index" asp-action="Books"><h2>Books</h2></a></li>
-        <li><a asp-controller="Index" asp-action="BookSpecial"><h2>Book of the day</h2></a></li>
-        <li><a asp-controller="Index" asp-action="About"><h2>About</h2></a></li>
-        <li><a asp-controller="Index" asp-action="Account"><h2>Account</h2></a></li>
-        <li><a asp-controller="Index" asp-action="Admin"><h2> Admin<br />privileges</h2></a></li>
-    </ul>
+    
 
-    <div class="divBg">
+    <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <form asp-controller="adminbook" asp-action="addbook">
+                <form  asp-action="AddBook">
                     <div class="form-group">
                         <label asp-for="Title" class="control-label"></label>
                         <input asp-for="Title" class="form-control" required />
@@ -47,9 +40,6 @@
                     <div class="form-group">
                         <input type="submit" value="Add book" class="btn btn-primary" />
                     </div>
-
-                    @{ if (ViewData["Message"] == "1") @Html.Raw("<p style=\"color:green\">Book added</p>"); }
-                    @{ if (ViewData["Message"] == "0") @Html.Raw("<p style=\"color:red\">Book could not added</p>"); }
 
                 </form>
             </div>

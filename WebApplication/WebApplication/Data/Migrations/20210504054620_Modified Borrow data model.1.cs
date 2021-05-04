@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApplication.Data.Migrations
+namespace Olympia_Library.Data.Migrations
 {
     public partial class ModifiedBorrowdatamodel1 : Migration
     {
