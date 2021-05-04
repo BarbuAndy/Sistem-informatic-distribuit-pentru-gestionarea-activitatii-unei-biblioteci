@@ -106,4 +106,3 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\TableIndex.cshtml.g.cs

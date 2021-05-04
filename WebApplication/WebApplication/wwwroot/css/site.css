@@ -89,7 +89,9 @@ body {
             height:100%;
             display:inline-block;
             max-width:200px;
-            min-height:250px;
+            min-width:100px;
+            min-height:100px;
+            height:250px;
 
         }
 

@@ -11,6 +11,7 @@ namespace WebApplication.Data
 
         public ApplicationUser User { get; set; }
         public Branch Branch { get; set; }
-        public IEnumerable<Book> Books { get; set; }
+        public Book Book { get; set; }
+        public int Amount { get; set; }
     }
 }
