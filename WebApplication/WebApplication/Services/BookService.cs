@@ -23,10 +23,18 @@ namespace WebApplication.Services
             return repositoryWrapper.BookRepository.FindByCondition(b => b.BookId != 0);
         }
 
-        public void AddBook(Book book)
+        public void AddBook(NewBookModel book)
         {
-            
-            repositoryWrapper.BookRepository.Create(book);
+            Book new_book = new Book
+            {
+                Title = book.Title,
+                Genre = book.Genre
+            };
+
+            Author book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault();
+
+            new_book.Author = book_author;
+            repositoryWrapper.BookRepository.Create(new_book);
         }
 
         public void UpdateBook(NewBookModel book)
@@ -48,10 +56,10 @@ namespace WebApplication.Services
             return repositoryWrapper.BookRepository.FindByCondition(expression).ToList();
         }
 
-        public void DeleteBook(Book book)
+        public void DeleteBook(int id)
         {
          
-            Book deleted_book = GetBooksByCondition(b => b.Title == book.Title).First();
+            var deleted_book = GetBooksByCondition(b => b.BookId == id).First();
             if(deleted_book != null)
             {
                 repositoryWrapper.BookRepository.Delete(deleted_book);

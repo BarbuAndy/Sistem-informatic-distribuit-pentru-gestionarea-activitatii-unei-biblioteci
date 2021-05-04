@@ -27,6 +27,7 @@ namespace Olympia_Library.Controllers
         public IActionResult Index()
         {
             var books = _bookService.GetAll();
+
             var bookListing = books.Select(b => new BookListingModel
             {
                 Title = b.Title,
@@ -35,15 +36,16 @@ namespace Olympia_Library.Controllers
                 Genre = b.Genre
             });
 
-            //TODO: if _repositoryWrapper.GenreRepository.Any()
+            
             var genres = _repositoryWrapper.GenreRepository.FindByCondition(g => g.Name != null);
+       
 
-            var orderedBookListing = bookListing.OrderBy(b => b.Genre);
             var model = new BookIndexModel
             {
-                BookListing = orderedBookListing,
+                BookListing = bookListing,
                 GenreList = genres
             };
+
             return View(model);
         }
 
@@ -57,19 +59,10 @@ namespace Olympia_Library.Controllers
         [HttpPost]
         public ActionResult AddBook(NewBookModel book)
         {
-            Book new_book = new Book
-            {
-                Title = book.Title,
-                Genre = book.Genre
-            };
-
-            Author book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault();
-
-            new_book.Author = book_author;
-
+            
             try
             {
-                _bookService.AddBook(new_book);
+                _bookService.AddBook(book);
                 _bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
@@ -79,7 +72,7 @@ namespace Olympia_Library.Controllers
                 ViewData["Message"] = "0";
             }
 
-            return View();
+            return RedirectToAction("Index", "Book");
 
         }
 
@@ -90,11 +83,10 @@ namespace Olympia_Library.Controllers
         [HttpPost]
         public ActionResult RemoveBook(int id)
         {
-            var deletedBook = _bookService.GetBooksByCondition(b => b.BookId == id).FirstOrDefault();
 
             try
             {
-                _bookService.DeleteBook(deletedBook);
+                _bookService.DeleteBook(id);
                 _bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
@@ -126,7 +118,7 @@ namespace Olympia_Library.Controllers
             {
                 ViewData["Message"] = ViewData["Message"] + "0";
             }
-            return RedirectToAction("Detail", "Book");
+            return RedirectToAction("Detail", "Book", new {book.Id });
         }
     }
 }
