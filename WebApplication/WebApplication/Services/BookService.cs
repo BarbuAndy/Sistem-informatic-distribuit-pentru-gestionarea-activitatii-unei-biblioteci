@@ -62,8 +62,7 @@ namespace WebApplication.Services
             var deleted_book = GetBooksByCondition(b => b.BookId == id).First();
             if(deleted_book != null)
             {
-                repositoryWrapper.BookRepository.Delete(deleted_book);
-                
+                repositoryWrapper.BookRepository.Delete(deleted_book);                
             }         
         }
     }
