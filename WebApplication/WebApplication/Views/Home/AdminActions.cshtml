@@ -4,8 +4,6 @@
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<!DOCTYPE html>
-<html>
 <head>
 
     <meta charset="utf-8" />
@@ -16,23 +14,21 @@
 
 
 
-<body>
-
 
     <div class="divBg">
         <div class="space">
             <label>Book Actions</label>
             <div>
                 <input class="butt" type="button" title="AddBook" value="Add Book"
-                       onclick="location.href='@Url.Action("AddBook", "AdminBook")'" />
+                       onclick="location.href='@Url.Action("Create", "Book")'" />
             </div>
             <div>
                 <input class="butt" type="button" title="RemoveBook" value="Remove Book"
-                       onclick="location.href='@Url.Action("RemoveBook", "AdminBook")'" />
+                       onclick="location.href='@Url.Action("RemoveBookForm", "Book")'" />
             </div>
             <div>
                 <input class="butt" type="button" title="RemoveBook" value="Edit Book"
-                       onclick="location.href='@Url.Action("EditBook", "AdminBook")'" />
+                       onclick="location.href='@Url.Action("EditBookForm", "Book")'" />
             </div>
         </div>
 
@@ -41,21 +37,20 @@
             <label>Author Actions</label>
             <div>
                 <input class="butt" type="button" title="AddAuthor" value="Add Author"
-                       onclick="location.href='@Url.Action("AddAuthor", "AdminAuthor")'" />
+                       onclick="location.href='@Url.Action("CreateAuthor", "AdminAuthor")'" />
             </div>
             <div>
                 <input class="butt" type="button" title="RemoveAuthor" value="Remove Author"
-                       onclick="location.href='@Url.Action("RemoveAuthor", "AdminAuthor")'" />
+                       onclick="location.href='@Url.Action("RemoveAuthorForm", "AdminAuthor")'" />
             </div>
             <div>
                 <input class="butt" type="button" title="EditAuthor" value="Edit Author"
-                       onclick="location.href='@Url.Action("EditAuthor", "AdminAuthor")'" />
+                       onclick="location.href='@Url.Action("EditAuthorForm", "AdminAuthor")'" />
             </div>
         </div>
 
 
         <br /><br /><br /><br />
     </div>
-</body>
-</html>
+
 

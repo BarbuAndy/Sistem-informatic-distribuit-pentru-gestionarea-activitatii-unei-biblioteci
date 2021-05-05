@@ -14,9 +14,10 @@ namespace WebApplication.Controllers
             _authorService = authorService;
         }
 
-        public ActionResult AddAuthor()
+        public IActionResult CreateAuthor()
         {
-            return View();
+            var model = new AuthorModel { };
+            return View(model);
         }
 
         [ValidateAntiForgeryToken]
@@ -35,15 +36,16 @@ namespace WebApplication.Controllers
             {
                 ViewData["Message"] = "0";
             }
-            return View();
+            return RedirectToAction("CreateAuthor", "AdminAuthor");
 
         }
 
-
-        public ActionResult RemoveAuthor()
+        public IActionResult RemoveAuthorForm()
         {
-            return View();
+            var model = new AuthorModel { };
+            return View(model);
         }
+        
 
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -60,15 +62,15 @@ namespace WebApplication.Controllers
             {
                 ViewData["Message"] = "0";
             }
-            return RedirectToAction("Index", "Home");
+            return View();
 
         }
 
 
-
-        public ActionResult EditAuthor()
+        public IActionResult EditAuthorForm()
         {
-            return View();
+            var model = new AuthorModel { };
+            return View(model);
         }
 
         [ValidateAntiForgeryToken]

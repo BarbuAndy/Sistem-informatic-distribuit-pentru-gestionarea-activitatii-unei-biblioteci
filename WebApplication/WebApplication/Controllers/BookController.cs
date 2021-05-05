@@ -73,11 +73,15 @@ namespace Olympia_Library.Controllers
                 ViewData["Message"] = "0";
             }
 
-            return RedirectToAction("Index", "Book");
+            return View();
 
         }
 
-
+        public IActionResult RemoveBookForm()
+        {
+            var model = new NewBookModel { };
+            return View(model);
+        }
         
 
         [ValidateAntiForgeryToken]
@@ -96,11 +100,15 @@ namespace Olympia_Library.Controllers
             {
                 ViewData["Message"] = "0";
             }
-            return RedirectToAction("Index", "Book");
+            return View();
         }
 
 
-
+        public IActionResult EditBookForm()
+        {
+            var model = new NewBookModel { };
+            return View(model);
+        }
         
 
         [ValidateAntiForgeryToken]
