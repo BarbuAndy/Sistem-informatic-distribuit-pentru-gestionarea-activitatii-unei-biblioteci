@@ -31,9 +31,9 @@ namespace Olympia_Library.Controllers
             var bookListing = books.Select(b => new BookListingModel
             {
                 Title = b.Title,
-                Author = b.Author,
+                AuthorId = b.AuthorId,
                 ImageUrl = b.ImageUrl,
-                Genre = b.Genre
+                GenreId = b.GenreId
             });
 
             
@@ -81,12 +81,12 @@ namespace Olympia_Library.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult RemoveBook(int id)
+        public ActionResult RemoveBook(NewBookModel book)
         {
 
             try
             {
-                _bookService.DeleteBook(id);
+                _bookService.DeleteBook(book);
                 _bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";

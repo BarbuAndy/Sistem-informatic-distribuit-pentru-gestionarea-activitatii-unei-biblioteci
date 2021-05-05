@@ -10,7 +10,7 @@ namespace Olympia_Library.Data
         public int BranchId { get; set; }
 
         public string Name { get; set; }
-        public Library Library { get; set; }
+        public int LibraryId { get; set; }
         
     }
 }

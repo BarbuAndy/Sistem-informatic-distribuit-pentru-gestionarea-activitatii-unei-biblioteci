@@ -20,5 +20,6 @@ namespace Olympia_Library.Data
         public DbSet<Branch> Branches { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }

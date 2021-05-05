@@ -9,8 +9,8 @@ namespace Olympia_Library.Data
     
     public class ApplicationUser : IdentityUser
     {
-        public int ReaderId { get; set; }
         public bool IsAdmin { get; set; }
         public DateTime Created { get; set; }
+        public string ProfileImageUrl { get; set; }
     }
 }

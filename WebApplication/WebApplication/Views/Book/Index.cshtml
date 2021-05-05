@@ -1,45 +1,52 @@
 ﻿
 @model Olympia_Library.Models.BookModel.BookIndexModel
 
+    <head>
+        <link rel="stylesheet" href="~/css/booksStyle.css" />
+    </head>
+
 <a asp-controller="Book" asp-action="Create" class="btn btn-dark">
     Add New Book
 </a>
 
-<div class="container">
-           
-
-    <div class="row">
-
+<div class="container ">
+    <div class="" id="bookIndexBody">
         @foreach (var genre in Model.GenreList)
         {
             if (!string.IsNullOrEmpty(genre.Name))
             {
-                <h4>@genre.Name</h4>
-                <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
-                    <div class="MultiCarousel-inner">
+                <div class="row bookCarousel">
+                    <h4>@genre.Name</h4>
+                    <div class="MultiCarousel " data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+                        <div class="MultiCarousel-inner">
 
-                        @foreach (var book in Model.BookListing)
-                        {
-                            if (book.Genre == genre)
+                            @foreach (var book in Model.BookListing)
                             {
-                                <div class="item">
-                                    <div class="pad15" style="background-image:url(@book.ImageUrl)">
+                                if (book.GenreId == genre.Id)
+                                {
+                                    <div class="item">
+                                        <div class="pad15" style="background-image:url(@book.ImageUrl)">
 
+                                        </div>
                                     </div>
-                                </div>
-                            }                    
-                            
-                        }
+                                }
 
+                            }
+
+                        </div>
+                        <button class="btn btn-primary leftLst"></button>
+                        <button class="btn btn-primary rightLst"></button>
                     </div>
-                    <button class="btn btn-primary leftLst"></button>
-                    <button class="btn btn-primary rightLst"></button>
                 </div>
+
             }
 
         }
-
     </div>
+
+        
+
+    
 
 
 
