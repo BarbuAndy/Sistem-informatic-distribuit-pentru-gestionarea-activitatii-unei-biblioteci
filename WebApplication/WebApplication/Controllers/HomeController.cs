@@ -29,6 +29,7 @@ namespace WebApplication.Controllers
         {         
             return View(_homeService.BuildHomeIndexModel());
         } 
+
         public IActionResult About()
         {         
             return View();

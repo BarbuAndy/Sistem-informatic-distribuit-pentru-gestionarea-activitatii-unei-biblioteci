@@ -31,6 +31,7 @@ namespace Olympia_Library.Services
             });
 
             var genres = repositoryWrapper.GenreRepository.FindByCondition(g => string.IsNullOrEmpty(g.Name));
+
             return new HomeIndexModel {
                 BookListing = bookListing,
                 Genres = genres

@@ -64,17 +64,25 @@ html {
     font-family: 'Roboto';
 }
 
+
 body {
-    padding: 0px 0 20px 0;
-    background-color: lightgray;
     background-image: url("/images/backgroundIndex.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    
     margin: 0;
     height: 100%;
+    color:white;
+
+}
+.divBg {
+    width: 70%;
+    position: relative;
+    left: 15%;
+    background: rgba(225,198,153,0.75);
+    color: black;
+    font-size: 1.75em;
 }
 
 .body-content {
