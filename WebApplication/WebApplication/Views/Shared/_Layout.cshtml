@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<Olympia_Library.Data.ApplicationUser> UserManager
+@inject SignInManager<Olympia_Library.Data.ApplicationUser> SignInManager
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,11 +13,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body id="mainBody">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olympia Library</a>
+        <nav class="fixed-top navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">Olympia Library</a>
+                </div>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,13 +28,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+
+                        <li><a asp-controller="Home" asp-action="Index" class="nav-link text-dark active">Home</a></li>
+                        <li><a asp-controller="Book" asp-action="Index" class="nav-link text-dark">Books</a></li>
+                        <li><a asp-controller="Index" asp-action="BookSpecial" class="nav-link text-dark">Book of the day</a></li>
+                        <li><a asp-controller="Index" asp-action="About" class="nav-link text-dark">About</a></li>
+                        <li><a asp-controller="Index" asp-action="Account" class="nav-link text-dark">Account</a></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                         <li><a asp-controller="Index" asp-action="Admin" class="nav-link text-dark">Admin<br />privileges</a></li>
+                        }
+                        
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -33,16 +48,12 @@
     <div class="container">
         <main role="main" class="pb-3">
 
-
+            
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - WebApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

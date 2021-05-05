@@ -11,9 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication.Data;
+using Olympia_Library.Data;
 using WebApplication.Repositories;
 using WebApplication.Services;
+using Olympia_Library.Services;
 
 namespace WebApplication
 {
@@ -40,6 +41,7 @@ namespace WebApplication
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddScoped<BookService>();
             services.AddScoped<AuthorService>();
+            services.AddScoped<HomeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

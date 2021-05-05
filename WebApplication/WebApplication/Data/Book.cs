@@ -1,6 +1,6 @@
 ﻿using Olympia_Library.Data;
 
-namespace WebApplication.Data
+namespace Olympia_Library.Data
 {
     public class Book
     {

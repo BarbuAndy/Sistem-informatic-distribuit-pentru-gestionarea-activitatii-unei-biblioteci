@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication.Data
+namespace Olympia_Library.Data
 {
     public class Library
     {

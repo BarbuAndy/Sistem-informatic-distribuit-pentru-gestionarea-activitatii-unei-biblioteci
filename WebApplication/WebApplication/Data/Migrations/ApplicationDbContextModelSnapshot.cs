@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplication.Data;
+using Olympia_Library.Data;
 
-namespace WebApplication.Data.Migrations
+namespace Olympia_Library.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -225,22 +225,7 @@ namespace WebApplication.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Olympia_Library.Data.Genre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genre");
-                });
-
-            modelBuilder.Entity("WebApplication.Data.Author", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Author", b =>
                 {
                     b.Property<int>("AuthorId")
                         .ValueGeneratedOnAdd()
@@ -261,7 +246,7 @@ namespace WebApplication.Data.Migrations
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Book", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Book", b =>
                 {
                     b.Property<int>("BookId")
                         .ValueGeneratedOnAdd()
@@ -269,9 +254,6 @@ namespace WebApplication.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BorrowId")
                         .HasColumnType("int");
 
                     b.Property<int?>("GenreId")
@@ -287,19 +269,23 @@ namespace WebApplication.Data.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("BorrowId");
-
                     b.HasIndex("GenreId");
 
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Borrow", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Borrow", b =>
                 {
                     b.Property<int>("BorrowId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BookId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("BranchId")
                         .HasColumnType("int");
@@ -309,6 +295,8 @@ namespace WebApplication.Data.Migrations
 
                     b.HasKey("BorrowId");
 
+                    b.HasIndex("BookId");
+
                     b.HasIndex("BranchId");
 
                     b.HasIndex("UserId");
@@ -316,7 +304,7 @@ namespace WebApplication.Data.Migrations
                     b.ToTable("Borrows");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Branch", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Branch", b =>
                 {
                     b.Property<int>("BranchId")
                         .ValueGeneratedOnAdd()
@@ -336,7 +324,25 @@ namespace WebApplication.Data.Migrations
                     b.ToTable("Branches");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Library", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genre");
+                });
+
+            modelBuilder.Entity("Olympia_Library.Data.Library", b =>
                 {
                     b.Property<int>("LibraryId")
                         .ValueGeneratedOnAdd()
@@ -351,7 +357,7 @@ namespace WebApplication.Data.Migrations
                     b.ToTable("Libraries");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Stock", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Stock", b =>
                 {
                     b.Property<int>("StockId")
                         .ValueGeneratedOnAdd()
@@ -374,7 +380,7 @@ namespace WebApplication.Data.Migrations
                     b.ToTable("Stocks");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.ApplicationUser", b =>
+            modelBuilder.Entity("Olympia_Library.Data.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -441,42 +447,42 @@ namespace WebApplication.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Book", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Book", b =>
                 {
-                    b.HasOne("WebApplication.Data.Author", "Author")
+                    b.HasOne("Olympia_Library.Data.Author", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
-
-                    b.HasOne("WebApplication.Data.Borrow", null)
-                        .WithMany("Books")
-                        .HasForeignKey("BorrowId");
 
                     b.HasOne("Olympia_Library.Data.Genre", "Genre")
                         .WithMany()
                         .HasForeignKey("GenreId");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Borrow", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Borrow", b =>
                 {
-                    b.HasOne("WebApplication.Data.Branch", "Branch")
+                    b.HasOne("Olympia_Library.Data.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId");
+
+                    b.HasOne("Olympia_Library.Data.Branch", "Branch")
                         .WithMany()
                         .HasForeignKey("BranchId");
 
-                    b.HasOne("WebApplication.Data.ApplicationUser", "User")
+                    b.HasOne("Olympia_Library.Data.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Branch", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Branch", b =>
                 {
-                    b.HasOne("WebApplication.Data.Library", "Library")
+                    b.HasOne("Olympia_Library.Data.Library", "Library")
                         .WithMany()
                         .HasForeignKey("LibraryId");
                 });
 
-            modelBuilder.Entity("WebApplication.Data.Stock", b =>
+            modelBuilder.Entity("Olympia_Library.Data.Stock", b =>
                 {
-                    b.HasOne("WebApplication.Data.Branch", "Branch")
+                    b.HasOne("Olympia_Library.Data.Branch", "Branch")
                         .WithMany()
                         .HasForeignKey("BranchId");
                 });

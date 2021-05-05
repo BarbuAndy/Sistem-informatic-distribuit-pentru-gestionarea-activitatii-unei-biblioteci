@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using WebApplication.Data;
+using Olympia_Library.Data;
 using WebApplication.Models;
 using WebApplication.Repositories;
 
@@ -19,10 +19,12 @@ namespace WebApplication.Services
 
         public void AddAuthor(AuthorModel author) 
         {
-            Author new_author = new Author();
-            new_author.Name = author.Name;
-            new_author.Birth_year = author.Birth_year;
-            new_author.Deceased = author.Deceased;
+            Author new_author = new Author {
+            Name = author.Name,
+            Birth_year = author.Birth_year,
+            Deceased = author.Deceased
+        };
+            
             repositoryWrapper.AuthorRepository.Create(new_author);
         }
 

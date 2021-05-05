@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fnwmAS7ZfDiwEnsEeo1wxANUnYz9C3YnCydKXv4N/2XeHs+gVkSyK0qIPe0wwEvGxyHcfviMYDx39ngHBEEVbg==",
+  "dgSpecHash": "ktFkypBFePFAQDoJ5M+EHPL8Y32G4n4AJDaPyososSN2rk8zBG7jh2Hh9B5Ss7ddT0ACTT+laT/ZiRr0xncCAQ==",
   "success": true,
   "projectFilePath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj",
   "expectedPackageFiles": [
@@ -22,10 +22,10 @@
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.13\\microsoft.entityframeworkcore.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.13\\microsoft.entityframeworkcore.abstractions.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.13\\microsoft.entityframeworkcore.analyzers.3.1.13.nupkg.sha512",
-    "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.11\\microsoft.entityframeworkcore.design.3.1.11.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.13\\microsoft.entityframeworkcore.design.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.13\\microsoft.entityframeworkcore.relational.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.13\\microsoft.entityframeworkcore.sqlserver.3.1.13.nupkg.sha512",
-    "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.11\\microsoft.entityframeworkcore.tools.3.1.11.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.13\\microsoft.entityframeworkcore.tools.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.13\\microsoft.extensions.caching.abstractions.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.13\\microsoft.extensions.caching.memory.3.1.13.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.13\\microsoft.extensions.configuration.3.1.13.nupkg.sha512",

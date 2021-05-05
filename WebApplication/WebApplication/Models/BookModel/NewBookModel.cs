@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace WebApplication.Models
 {
 
-    public class BookModel
+    public class NewBookModel
     {
         public string Title { get; set; }
         public string AuthorName { get; set; }
         public Genre Genre { get; set; }
+        public int Id { get; set; }
 
     }
 }
