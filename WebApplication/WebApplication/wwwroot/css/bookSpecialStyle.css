@@ -1,14 +1,13 @@
 ﻿body {
     height: 100%;
-    width: 99%;
     background-image: url("../images/booksBg.jpg");
 }
 
 
 
 .divBg {
-    width: 70%;
-    position: relative;
+    width: 100%;
+    position: center;
     left: 15%;
     background: rgba(225,198,153,0.75);
     color: black;

@@ -35,10 +35,9 @@
                         <li><a asp-controller="Home" asp-action="BookSpecial" class="nav-link text-dark">Book of the day</a></li>
                         <li><a asp-controller="Home" asp-action="About" class="nav-link text-dark">About</a></li>
                         @*<li><a asp-controller="Index" asp-action="Account" class="nav-link text-dark">Account</a></li>*@
-                        @if (User.IsInRole("Admin"))
-                        {
-                         <li><a asp-controller="Index" asp-action="Admin" class="nav-link text-dark">Admin<br />privileges</a></li>
-                        }
+                        
+                        @*<li><a asp-controller="Index" asp-action="Admin" class="nav-link text-dark">Admin privileges</a></li>*@
+                        
                         
                     </ul>
 

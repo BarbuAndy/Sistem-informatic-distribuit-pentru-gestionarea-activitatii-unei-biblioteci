@@ -33,7 +33,8 @@ namespace Olympia_Library.Controllers
                 Title = b.Title,
                 AuthorId = b.AuthorId,
                 ImageUrl = b.ImageUrl,
-                GenreId = b.GenreId
+                GenreId = b.GenreId,
+                BookId = b.BookId
             });
 
             
