@@ -9,7 +9,7 @@ using WebApplication.Services;
 
 namespace Olympia_Library.Services
 {
-    public class HomeService :BaseService
+    public class HomeService : BaseService
     {
         private readonly BookService _bookService;
 

@@ -64,12 +64,12 @@ html {
 body {
     padding: 0px 0 20px 0;
     background-color: lightgray;
+    background-image: url("/images/backgroundIndex.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     font-family: 'Roboto';
-    padding-top:70px;
 }
 .footer {
   position: absolute;
@@ -85,7 +85,8 @@ body {
     padding: 15px;
     width: 100%;
     position: relative;
-    min-height:250px;
+    min-height:200px;
+    background-color:rgb(133 103 103)
 }
 
     .MultiCarousel .MultiCarousel-inner {
