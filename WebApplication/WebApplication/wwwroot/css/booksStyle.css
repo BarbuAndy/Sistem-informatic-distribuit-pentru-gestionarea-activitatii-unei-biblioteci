@@ -1,5 +1,10 @@
-﻿#bookIndexBody {
-    color: #CB9934;
+﻿
+body {
+    background-image: url("../images/booksBg.jpg");
+}
+
+#bookIndexBody {
+    color:black;
 }
 
 .bookCarousel{

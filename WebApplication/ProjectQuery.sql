@@ -23,7 +23,24 @@ SELECT * FROM Books
 
 INSERT INTO Books (Title, AuthorId, GenreId, ImageUrl)
 VALUES
-('Archetypes of the collective unconscious', 1, 5,  '/images/book_of_the_day.jpg')
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg'),
+('Archetypes of the collective unconscious', 1, 1,  '/images/book_of_the_day.jpg')
+
+
+
+
+
+
 
 
 USE Project2

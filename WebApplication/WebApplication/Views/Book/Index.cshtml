@@ -5,12 +5,13 @@
         <link rel="stylesheet" href="~/css/booksStyle.css" />
     </head>
 
-<a asp-controller="Book" asp-action="Create" class="btn btn-dark">
-    Add New Book
-</a>
+
 
 <div class="col-lg-12">
     <div class="container" id="bookIndexBody">
+        <a asp-controller="Book" asp-action="Create" class="btn btn-dark">
+            Add New Book
+        </a>
         @foreach (var genre in Model.GenreList)
         {
             if (!string.IsNullOrEmpty(genre.Name))
@@ -24,20 +25,20 @@
                             {
                                 if (book.GenreId == genre.Id)
                                 {
-                            <div class="item">
-                                <a asp-controller="Book" asp-action="Detail" asp-route-id="@book.BookId" >
-                                    <img class="bookImage" src="@book.ImageUrl" />
-                                </a>
-                                
+                                    <div class="item">
+                                        <a asp-controller="Book" asp-action="Detail" asp-route-id="@book.BookId">
+                                            <img class="bookImage" src="@book.ImageUrl" />
+                                        </a>
 
-                            </div>
+
+                                    </div>
                                 }
 
                             }
 
                         </div>
-                        <button class="btn btn-primary leftLst"></button>
-                        <button class="btn btn-primary rightLst"></button>
+                        <button class="btn btn-primary leftLst"> &larr; </button>
+                        <button class="btn btn-primary rightLst"> &rarr; </button>
                     </div>
                 </div>
 
