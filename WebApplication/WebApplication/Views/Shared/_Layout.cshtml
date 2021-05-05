@@ -32,7 +32,7 @@
 
                         <li><a asp-controller="Home" asp-action="Index" class="nav-link text-dark active">Home</a></li>
                         <li><a asp-controller="Book" asp-action="Index" class="nav-link text-dark">Books</a></li>
-                        @*<li><a asp-controller="Index" asp-action="BookSpecial" class="nav-link text-dark">Book of the day</a></li>*@
+                        <li><a asp-controller="Home" asp-action="BookSpecial" class="nav-link text-dark">Book of the day</a></li>
                         <li><a asp-controller="Home" asp-action="About" class="nav-link text-dark">About</a></li>
                         @*<li><a asp-controller="Index" asp-action="Account" class="nav-link text-dark">Account</a></li>*@
                         @if (User.IsInRole("Admin"))

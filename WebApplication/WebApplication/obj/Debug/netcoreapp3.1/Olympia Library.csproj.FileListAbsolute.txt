@@ -82,7 +82,6 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\account.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\admin.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\books.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\bookSpecial.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\Index.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -106,3 +105,4 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\RemoveBook.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Create.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\BookSpecial.cshtml.g.cs

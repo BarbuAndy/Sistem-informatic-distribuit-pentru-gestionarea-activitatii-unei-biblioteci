@@ -34,6 +34,7 @@ namespace WebApplication.Services
             var book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault().AuthorId;
 
             new_book.AuthorId = book_author;
+
             repositoryWrapper.BookRepository.Create(new_book);
         }
 
@@ -69,6 +70,7 @@ namespace WebApplication.Services
         {
          
             var deleted_book = GetBooksByCondition(b => b.Title == book.Title).First();
+
             if(deleted_book != null)
             {
                 repositoryWrapper.BookRepository.Delete(deleted_book);                

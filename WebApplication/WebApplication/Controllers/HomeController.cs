@@ -35,6 +35,11 @@ namespace WebApplication.Controllers
             return View();
         }
 
+        public IActionResult BookSpecial()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
