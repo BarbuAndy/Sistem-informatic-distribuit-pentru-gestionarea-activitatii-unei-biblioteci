@@ -10,7 +10,7 @@ using WebApplication.Models;
 using WebApplication.Repositories;
 using WebApplication.Services;
 
-namespace Olympia_Library.Controllers
+namespace WebApplication.Controllers
 {
     public class BookController : Controller
     {
@@ -31,9 +31,10 @@ namespace Olympia_Library.Controllers
             var bookListing = books.Select(b => new BookListingModel
             {
                 Title = b.Title,
-                Author = b.Author,
+                AuthorId = b.AuthorId,
                 ImageUrl = b.ImageUrl,
-                Genre = b.Genre
+                GenreId = b.GenreId,
+                BookId = b.BookId
             });
 
             
@@ -72,21 +73,25 @@ namespace Olympia_Library.Controllers
                 ViewData["Message"] = "0";
             }
 
-            return RedirectToAction("Index", "Book");
+            return View();
 
         }
 
-
+        public IActionResult RemoveBookForm()
+        {
+            var model = new NewBookModel { };
+            return View(model);
+        }
         
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult RemoveBook(int id)
+        public ActionResult RemoveBook(NewBookModel book)
         {
 
             try
             {
-                _bookService.DeleteBook(id);
+                _bookService.DeleteBook(book);
                 _bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
@@ -95,11 +100,15 @@ namespace Olympia_Library.Controllers
             {
                 ViewData["Message"] = "0";
             }
-            return RedirectToAction("Index", "Book");
+            return View();
         }
 
 
-
+        public IActionResult EditBookForm()
+        {
+            var model = new NewBookModel { };
+            return View(model);
+        }
         
 
         [ValidateAntiForgeryToken]

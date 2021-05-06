@@ -25,12 +25,13 @@ namespace Olympia_Library.Services
             var bookListing = books.Select(b => new BookListingModel
             {
                 Title = b.Title,
-                Author = b.Author,
+                AuthorId = b.AuthorId,
                 ImageUrl = b.ImageUrl,
-                Genre = b.Genre
+                GenreId = b.GenreId
             });
 
             var genres = repositoryWrapper.GenreRepository.FindByCondition(g => string.IsNullOrEmpty(g.Name));
+
             return new HomeIndexModel {
                 BookListing = bookListing,
                 Genres = genres

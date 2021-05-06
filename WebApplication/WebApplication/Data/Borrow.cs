@@ -9,9 +9,9 @@ namespace Olympia_Library.Data
     {
         public int BorrowId { get;set; }
 
-        public ApplicationUser User { get; set; }
-        public Branch Branch { get; set; }
-        public Book Book { get; set; }
+        public string UserId { get; set; }
+        public int BranchId { get; set; }
+        public int BookId { get; set; }
         public int Amount { get; set; }
     }
 }

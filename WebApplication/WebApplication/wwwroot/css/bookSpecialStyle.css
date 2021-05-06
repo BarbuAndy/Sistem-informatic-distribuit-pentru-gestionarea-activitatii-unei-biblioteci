@@ -1,39 +1,13 @@
 ﻿body {
     height: 100%;
-    width: 99%;
     background-image: url("../images/booksBg.jpg");
 }
 
 
 
-ul {
-    list-style-type: none;
-    overflow: hidden;
-    background: rgba(225,198,153,0.75);
-    width: 95%;
-    display: inline-block;
-}
-
-li {
-    float: left;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-a {
-    padding: 25px 50px 25px 50px;
-    text-decoration: none;
-    color: inherit;
-}
-
-    a:hover {
-        color: lightcoral;
-    }
-
-
 .divBg {
-    width: 70%;
-    position: relative;
+    width: 100%;
+    position: center;
     left: 15%;
     background: rgba(225,198,153,0.75);
     color: black;

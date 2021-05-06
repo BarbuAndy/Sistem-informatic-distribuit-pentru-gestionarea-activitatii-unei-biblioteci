@@ -28,12 +28,12 @@ namespace WebApplication.Services
             Book new_book = new Book
             {
                 Title = book.Title,
-                Genre = book.Genre
+                GenreId = repositoryWrapper.GenreRepository.FindByCondition(g => g.Name == book.GenreName).FirstOrDefault().Id,               
             };
 
-            Author book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault();
+            var book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault().AuthorId;
 
-            new_book.Author = book_author;
+            new_book.AuthorId = book_author;
             repositoryWrapper.BookRepository.Create(new_book);
         }
 
@@ -41,29 +41,49 @@ namespace WebApplication.Services
         {
             Book updated_book = new Book();
             updated_book = GetBooksByCondition(b => b.Title == book.Title).First();
+
             if(book.AuthorName!=null)
-            updated_book.Author.AuthorId = (_authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault()).AuthorId;
-            if (book.Genre != null)
+                updated_book.AuthorId = (_authorService
+                    .GetAuthorByCondition(b => b.Name == book.AuthorName)
+                    .FirstOrDefault()).AuthorId;
+
+            if (book.GenreName != null)
+                updated_book.GenreId = repositoryWrapper.GenreRepository
+                    .FindByCondition(g => g.Name == book.GenreName)
+                    .FirstOrDefault().Id;
+
+            if (book.GenreId != 0)
             {
-                updated_book.Genre = book.Genre;
+                updated_book.GenreId = book.GenreId;
             }
 
             repositoryWrapper.BookRepository.Update(updated_book);
         }
 
-        public IEnumerable<Book> GetBooksByCondition(Expression<Func<Book, bool>> expression)
+        public List<Book> GetBooksByCondition(Expression<Func<Book, bool>> expression)
         {
             return repositoryWrapper.BookRepository.FindByCondition(expression).ToList();
         }
 
-        public void DeleteBook(int id)
+        public void DeleteBook(NewBookModel book)
         {
          
-            var deleted_book = GetBooksByCondition(b => b.BookId == id).First();
+            var deleted_book = GetBooksByCondition(b => b.Title == book.Title).First();
             if(deleted_book != null)
             {
                 repositoryWrapper.BookRepository.Delete(deleted_book);                
             }         
+        }
+
+        public List<string> ExtractBookTitles()
+        {
+            List<Book> books = GetBooksByCondition(b => b.BookId != -1);
+            List<string> BookNames = new List<string>();
+            foreach (var book in books)
+            {
+                BookNames.Add(book.Title);
+            }
+            return BookNames;
         }
     }
 }

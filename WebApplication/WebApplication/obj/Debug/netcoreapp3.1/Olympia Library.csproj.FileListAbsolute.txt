@@ -74,16 +74,10 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.TagHelpers.output.cache
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.RazorCoreGenerate.cache
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\addauthor.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\editauthor.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\removeauthor.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\about.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\account.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\admin.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\books.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\bookSpecial.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\Index.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -103,6 +97,128 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\EditBook.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\RemoveBook.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Create.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\BookSpecial.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Detail.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\CreateAuthor.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\AdminActions.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\EditAuthorForm.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\RemoveAuthorForm.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\EditBookForm.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\RemoveBookForm.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.StaticWebAssets.xml
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.exe
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.deps.json
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.runtimeconfig.json
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.runtimeconfig.dev.json
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.pdb
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.Views.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.Views.pdb
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.csprojAssemblyReference.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.AssemblyInfoInputs.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.AssemblyInfo.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.csproj.CoreCompileInputs.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.RazorAssemblyInfo.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.RazorAssemblyInfo.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\staticwebassets\Olympia Library.StaticWebAssets.Manifest.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\staticwebassets\Olympia Library.StaticWebAssets.xml
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\scopedcss\bundle\Olympia Library.styles.css
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.TagHelpers.input.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.TagHelpers.output.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.RazorCoreGenerate.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\CreateAuthor.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\EditAuthorForm.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\RemoveAuthorForm.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Create.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Detail.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\EditBookForm.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\RemoveBookForm.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\AdminActions.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\BookSpecial.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\account.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\books.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Index\Index.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.RazorTargetAssemblyInfo.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.RazorTargetAssemblyInfo.cs
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.Views.pdb
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.csproj.CopyComplete
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.dll
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.pdb
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.genruntimeconfig.cache
+C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Inventory\SpecificInventory.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Inventory\SpecificInventory.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminBranch\addbranch.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminBranch\editbranch.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminBranch\Inventory.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminBranch\removebranch.cshtml.g.cs

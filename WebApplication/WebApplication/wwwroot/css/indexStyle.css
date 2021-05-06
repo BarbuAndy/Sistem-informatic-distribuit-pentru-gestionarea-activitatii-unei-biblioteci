@@ -1,44 +1,4 @@
-﻿
-
-body {
- 
-    background-image: url("../images/backgroundIndex.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
-
-
-ul {
-    list-style-type: none;
-    overflow: hidden;
-    background: rgba(225,198,153,0.75);
-    width: 95%;
-    display: inline-block;
-}
-
-li {
-    float: left;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-a {
-    padding: 25px 50px 25px 50px;
-    text-decoration: none;
-    color: inherit;
-}
-
- a:hover {
-    color: lightcoral;
- }
-
-
-.divBg {
-    width: 30%;
-    position: relative;
-    background: rgba(225,198,153,0.75);
-    color: black;
-    font-size: 1.75em;
-    font-weight: bold;
+﻿.genre-image{
+    height:40px;
+    width:40px;
 }

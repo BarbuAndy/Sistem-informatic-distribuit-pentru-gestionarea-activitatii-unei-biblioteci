@@ -253,10 +253,10 @@ namespace Olympia_Library.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AuthorId")
+                    b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("GenreId")
+                    b.Property<int>("GenreId")
                         .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")
@@ -266,10 +266,6 @@ namespace Olympia_Library.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookId");
-
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("GenreId");
 
                     b.ToTable("Books");
                 });
@@ -284,22 +280,16 @@ namespace Olympia_Library.Data.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BookId")
+                    b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BranchId")
+                    b.Property<int>("BranchId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BorrowId");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("BranchId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Borrows");
                 });
@@ -311,15 +301,16 @@ namespace Olympia_Library.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("LibraryId")
+                    b.Property<int>("LibraryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BranchId");
-
-                    b.HasIndex("LibraryId");
 
                     b.ToTable("Branches");
                 });
@@ -339,7 +330,7 @@ namespace Olympia_Library.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genre");
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("Olympia_Library.Data.Library", b =>
@@ -367,15 +358,13 @@ namespace Olympia_Library.Data.Migrations
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BranchId")
+                    b.Property<int>("BranchId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("StockId");
-
-                    b.HasIndex("BranchId");
 
                     b.ToTable("Stocks");
                 });
@@ -390,8 +379,8 @@ namespace Olympia_Library.Data.Migrations
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ReaderId")
-                        .HasColumnType("int");
+                    b.Property<string>("ProfileImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -445,46 +434,6 @@ namespace Olympia_Library.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Olympia_Library.Data.Book", b =>
-                {
-                    b.HasOne("Olympia_Library.Data.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId");
-
-                    b.HasOne("Olympia_Library.Data.Genre", "Genre")
-                        .WithMany()
-                        .HasForeignKey("GenreId");
-                });
-
-            modelBuilder.Entity("Olympia_Library.Data.Borrow", b =>
-                {
-                    b.HasOne("Olympia_Library.Data.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookId");
-
-                    b.HasOne("Olympia_Library.Data.Branch", "Branch")
-                        .WithMany()
-                        .HasForeignKey("BranchId");
-
-                    b.HasOne("Olympia_Library.Data.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Olympia_Library.Data.Branch", b =>
-                {
-                    b.HasOne("Olympia_Library.Data.Library", "Library")
-                        .WithMany()
-                        .HasForeignKey("LibraryId");
-                });
-
-            modelBuilder.Entity("Olympia_Library.Data.Stock", b =>
-                {
-                    b.HasOne("Olympia_Library.Data.Branch", "Branch")
-                        .WithMany()
-                        .HasForeignKey("BranchId");
                 });
 #pragma warning restore 612, 618
         }

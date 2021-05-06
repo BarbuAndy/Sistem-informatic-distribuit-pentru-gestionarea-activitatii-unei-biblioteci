@@ -11,8 +11,8 @@ namespace WebApplication.Models
     {
         public string Title { get; set; }
         public string AuthorName { get; set; }
-        public Genre Genre { get; set; }
+        public int GenreId { get; set; }
+        public string GenreName { get; set; }
         public int Id { get; set; }
-
     }
 }

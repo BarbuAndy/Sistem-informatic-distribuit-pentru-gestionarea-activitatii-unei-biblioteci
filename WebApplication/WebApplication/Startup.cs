@@ -42,6 +42,8 @@ namespace WebApplication
             services.AddScoped<BookService>();
             services.AddScoped<AuthorService>();
             services.AddScoped<HomeService>();
+            services.AddScoped<StockService>();
+            services.AddScoped<BranchService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,6 +75,7 @@ namespace WebApplication
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
         }
     }
 }

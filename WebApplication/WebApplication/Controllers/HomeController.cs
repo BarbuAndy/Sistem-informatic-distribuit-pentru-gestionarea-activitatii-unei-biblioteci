@@ -28,6 +28,21 @@ namespace WebApplication.Controllers
         public IActionResult Index()
         {         
             return View(_homeService.BuildHomeIndexModel());
+        } 
+
+        public IActionResult About()
+        {         
+            return View();
+        }
+
+        public IActionResult AdminActions()
+        {
+            return View();
+        }
+
+        public IActionResult BookSpecial()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
