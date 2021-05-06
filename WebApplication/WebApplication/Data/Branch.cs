@@ -11,6 +11,6 @@ namespace Olympia_Library.Data
 
         public string Name { get; set; }
         public int LibraryId { get; set; }
-        
+        public string Location { get; set; }
     }
 }

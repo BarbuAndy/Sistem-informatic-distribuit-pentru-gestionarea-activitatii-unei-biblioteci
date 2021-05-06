@@ -60,7 +60,7 @@ namespace WebApplication.Services
             repositoryWrapper.BookRepository.Update(updated_book);
         }
 
-        public IEnumerable<Book> GetBooksByCondition(Expression<Func<Book, bool>> expression)
+        public List<Book> GetBooksByCondition(Expression<Func<Book, bool>> expression)
         {
             return repositoryWrapper.BookRepository.FindByCondition(expression).ToList();
         }
@@ -73,6 +73,17 @@ namespace WebApplication.Services
             {
                 repositoryWrapper.BookRepository.Delete(deleted_book);                
             }         
+        }
+
+        public List<string> ExtractBookTitles()
+        {
+            List<Book> books = GetBooksByCondition(b => b.BookId != -1);
+            List<string> BookNames = new List<string>();
+            foreach (var book in books)
+            {
+                BookNames.Add(book.Title);
+            }
+            return BookNames;
         }
     }
 }

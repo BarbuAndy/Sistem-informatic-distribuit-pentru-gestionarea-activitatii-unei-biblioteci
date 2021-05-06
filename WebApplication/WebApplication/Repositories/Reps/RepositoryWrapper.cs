@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Olympia_Library.Data;
-
+using WebApplication.Repositories.Abstractions;
+using WebApplication.Repositories.Reps;
 
 namespace WebApplication.Repositories
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-        private ApplicationDbContext _db;
+        private readonly ApplicationDbContext _db;
         private IBookRepository _bookRepository;
         private IAuthorRepository _authorRepository;
         private IGenreRepository _genreRepository;
-
+        private IBranchRepository _branchRepository;
+        private IStockRepository _stockRepository;
 
         public RepositoryWrapper(ApplicationDbContext db)
         {
@@ -54,7 +56,29 @@ namespace WebApplication.Repositories
                 return _genreRepository;
             }
         }
+        public IBranchRepository BranchRepository
+        {
+            get
+            {
+                if (_branchRepository == null)
+                {
+                    _branchRepository = new BranchRepository(_db);
+                }
+                return _branchRepository;
+            }
+        }
 
+        public IStockRepository StockRepository
+        {
+            get
+            {
+                if (_stockRepository == null)
+                {
+                    _stockRepository = new StockRepository(_db);
+                }
+                return _stockRepository;
+            }
+        }
         public void Save()
         {
             _db.SaveChanges();

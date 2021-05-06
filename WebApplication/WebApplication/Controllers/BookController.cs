@@ -10,7 +10,7 @@ using WebApplication.Models;
 using WebApplication.Repositories;
 using WebApplication.Services;
 
-namespace Olympia_Library.Controllers
+namespace WebApplication.Controllers
 {
     public class BookController : Controller
     {
