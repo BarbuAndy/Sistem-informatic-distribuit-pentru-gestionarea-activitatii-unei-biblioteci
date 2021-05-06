@@ -16,3 +16,16 @@ body {
     width:140px;
 }
 
+.book-detail-image{
+    height:400px;
+    width:300px;
+}
+
+.detail-content{
+    background:rgb(195, 193, 193, 0.7);
+}
+
+.book-detail-description span{
+    display:block;
+    margin-bottom:20px;
+}

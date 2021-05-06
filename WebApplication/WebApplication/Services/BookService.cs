@@ -85,5 +85,28 @@ namespace WebApplication.Services
             }
             return BookNames;
         }
+
+        public NewBookModel BuildBookDetailModel(int id)
+        {
+            var book = repositoryWrapper.BookRepository.FindByCondition(b => b.BookId == id).FirstOrDefault();
+            var bookModel = new NewBookModel
+            {
+                Title = book.Title,
+                AuthorName = _authorService.GetAuthorByCondition(a => a.AuthorId == book.AuthorId).FirstOrDefault().Name,
+                GenreId = book.GenreId,
+                GenreName = repositoryWrapper.GenreRepository.FindByCondition(g => g.Id == book.GenreId).FirstOrDefault().Name,
+                Id = id,
+                ImageUrl = book.ImageUrl
+            };
+            return bookModel;
+        }
+
+        public string GetGenreName(int bookId)
+        {
+            var genreId = repositoryWrapper.BookRepository.FindByCondition(b => b.BookId == bookId).FirstOrDefault().GenreId;
+            var genreName = repositoryWrapper.GenreRepository.FindByCondition(g => g.Id == genreId).FirstOrDefault().Name;
+
+            return genreName;
+        }
     }
 }

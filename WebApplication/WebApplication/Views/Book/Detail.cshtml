@@ -1,2 +1,26 @@
-﻿@model Olympia_Library.Models.BookModel.BookListingModel 
+﻿@model WebApplication.Models.NewBookModel
 
+
+    <head>
+        <link rel="stylesheet" href="~/css/booksStyle.css" />
+    </head>
+
+
+    <div class="container ">
+        <div class="row detail-content">
+            <div class="col-md-4">
+                <div class="row">
+                    <img src="@Model.ImageUrl" class="book-detail-image" />
+                </div>
+            </div>
+            <div class="col-md-6 book-detail-description">
+                <span>Title :  @Model.Title</span>
+                <span>Genre: <a asp-controller="Genre" asp-action="Index" asp-route-id="@Model.GenreId">
+                                @Model.GenreName
+                            </a></span>
+                <span>Author: @Model.AuthorName</span>
+
+            </div>
+        </div>
+        
+    </div>

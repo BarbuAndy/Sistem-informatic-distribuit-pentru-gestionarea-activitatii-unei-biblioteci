@@ -103,6 +103,10 @@ body {
 }
 
 
+.app-logo{
+    height:40px;
+    width:40px;
+}
 
 .MultiCarousel {
     float: left;
@@ -112,7 +116,7 @@ body {
     position: relative;
     min-height: 200px;
     max-height: 230px;
-    background: rgba(186, 186, 186, 0.3);
+    background: rgba(186, 186, 186, 0.5);
 }
 
     .MultiCarousel .MultiCarousel-inner {
@@ -167,4 +171,12 @@ body {
     background: rgba(186, 186, 186, 0.3);
     color: black;
     font-size: 1.25em;
+}
+
+.genre-book-image{
+    height:250px;
+    width:175px;
+    display:block;
+    margin:30px;
+    position:relative;
 }

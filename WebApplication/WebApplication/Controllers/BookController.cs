@@ -50,6 +50,13 @@ namespace WebApplication.Controllers
             return View(model);
         }
 
+       
+
+        public IActionResult Detail(int id)
+        {
+            return View(_bookService.BuildBookDetailModel(id));
+        }
+
         public IActionResult Create()
         {
             var model = new NewBookModel();
@@ -129,5 +136,6 @@ namespace WebApplication.Controllers
             }
             return RedirectToAction("Detail", "Book", new {book.Id });
         }
+
     }
 }
