@@ -19,13 +19,13 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #000;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #000;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -73,7 +73,7 @@ body {
     background-position: center;
     margin: 0;
     height: 100%;
-    color:white;
+    color:black;
 
 }
 .divBg {
@@ -85,12 +85,14 @@ body {
     font-size: 1.75em;
 }
 
-.body-content {
+.main-body-content {
     padding-left: 15px;
     padding-right: 15px;
     position: relative;
     height: 100%;
-    width:100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius:7px;
 }
 
 .footer {
@@ -115,7 +117,7 @@ body {
     position: relative;
     min-height: 200px;
     max-height: 230px;
-    background: rgba(186, 186, 186, 0.5);
+    background: none;
 }
 
     .MultiCarousel .MultiCarousel-inner {
@@ -150,11 +152,11 @@ body {
     }
 
     .MultiCarousel .leftLst {
-        left: 0;
+        left: 2px;
     }
 
     .MultiCarousel .rightLst {
-        right: 0;
+        right: 2px;
     }
 
         .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
@@ -178,4 +180,8 @@ body {
     display:block;
     margin:30px;
     position:relative;
+}
+
+.carousel-section{
+
 }
