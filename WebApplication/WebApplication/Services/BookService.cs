@@ -108,5 +108,12 @@ namespace WebApplication.Services
 
             return genreName;
         }
+
+        public IEnumerable<Book> GetLatestAdditions(int number)
+        {
+            return GetAll().OrderByDescending(b => b.BookId).Take(number);     
+        }
+
+        
     }
 }

@@ -22,19 +22,30 @@ namespace Olympia_Library.Services
         {
             var books = _bookService.GetAll();
 
+            var latestAdditions = _bookService.GetLatestAdditions(10)
+                .Select(b => new BookListingModel {
+                    Title = b.Title,
+                    AuthorId = b.AuthorId,
+                    ImageUrl = b.ImageUrl,
+                    GenreId = b.GenreId,
+                    BookId = b.BookId
+                });
+
             var bookListing = books.Select(b => new BookListingModel
             {
                 Title = b.Title,
                 AuthorId = b.AuthorId,
                 ImageUrl = b.ImageUrl,
-                GenreId = b.GenreId
+                GenreId = b.GenreId,
+                BookId = b.BookId
             });
 
             var genres = repositoryWrapper.GenreRepository.FindByCondition(g => string.IsNullOrEmpty(g.Name));
 
             return new HomeIndexModel {
                 BookListing = bookListing,
-                Genres = genres
+                Genres = genres,
+                LatestAdditions = latestAdditions
             };
 
         }
