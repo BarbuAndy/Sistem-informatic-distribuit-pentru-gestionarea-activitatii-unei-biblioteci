@@ -74,7 +74,7 @@ namespace WebApplication.Controllers
 
                 _bookService.AddBook(book);
 
-                _bookService.Save();
+                //_bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
             }       

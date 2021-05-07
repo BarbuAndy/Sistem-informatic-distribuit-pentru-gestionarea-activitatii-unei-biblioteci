@@ -8,6 +8,6 @@ namespace WebApplication.Repositories
 {
     public interface IBookRepository : IRepositoryBase<Book>
     {
-        
+        Task<Book> GetBookByIdAsync(int id);
     }
 }

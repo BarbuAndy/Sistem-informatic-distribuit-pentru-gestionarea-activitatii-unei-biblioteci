@@ -15,5 +15,6 @@ namespace WebApplication.Repositories
         IBranchRepository BranchRepository { get; }
         IStockRepository StockRepository { get; }
         void Save();
+        Task SaveAsync();
     }
 }

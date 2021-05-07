@@ -46,12 +46,12 @@ namespace WebApplication.Services
             new_book.AuthorId = book_author;
 
             repositoryWrapper.BookRepository.Create(new_book);
-           
+            Save();
 
             var bookId = repositoryWrapper.BookRepository.FindByCondition(b => b.Title == book.Title).FirstOrDefault().BookId;
 
             UploadBookCover(book.CoverImage, bookId);
-
+            Save();
 
         }
 
