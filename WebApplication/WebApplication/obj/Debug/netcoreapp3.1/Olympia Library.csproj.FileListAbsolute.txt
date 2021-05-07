@@ -97,7 +97,6 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Create.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\BookSpecial.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Detail.cshtml.g.cs
@@ -223,3 +222,5 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminBranch\Inventory.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminBranch\removebranch.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Genre\Index.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\FileUpload\Index.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\AddBook.cshtml.g.cs

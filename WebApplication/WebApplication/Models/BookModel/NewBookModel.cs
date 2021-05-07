@@ -1,4 +1,5 @@
-﻿using Olympia_Library.Data;
+﻿using Microsoft.AspNetCore.Http;
+using Olympia_Library.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace WebApplication.Models
         public string GenreName { get; set; }
         public int Id { get; set; }
         public string ImageUrl { get; set; }
+        public IFormFile CoverImage { get; set; }
     }
 }

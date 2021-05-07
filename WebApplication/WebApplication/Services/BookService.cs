@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Olympia_Library.Data;
 using WebApplication.Models;
 using WebApplication.Repositories;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace WebApplication.Services
 {
@@ -14,8 +18,12 @@ namespace WebApplication.Services
     {
 
         private readonly AuthorService _authorService;
-        public BookService(IRepositoryWrapper repositoryWrapper, AuthorService authorService) : base(repositoryWrapper) {
-            _authorService = authorService;              
+        private readonly IHostEnvironment _hostEnvironment;
+        
+
+        public BookService(IRepositoryWrapper repositoryWrapper, AuthorService authorService, IHostEnvironment hostEnvironment) : base(repositoryWrapper) {
+            _authorService = authorService;
+            _hostEnvironment = hostEnvironment;
         }
 
         public IEnumerable<Book> GetAll()
@@ -28,13 +36,23 @@ namespace WebApplication.Services
             Book new_book = new Book
             {
                 Title = book.Title,
-                GenreId = repositoryWrapper.GenreRepository.FindByCondition(g => g.Name == book.GenreName).FirstOrDefault().Id,               
+                GenreId = repositoryWrapper.GenreRepository.FindByCondition(g => g.Name == book.GenreName).FirstOrDefault().Id
+                
             };
 
+            
             var book_author = _authorService.GetAuthorByCondition(b => b.Name == book.AuthorName).FirstOrDefault().AuthorId;
 
             new_book.AuthorId = book_author;
+
             repositoryWrapper.BookRepository.Create(new_book);
+           
+
+            var bookId = repositoryWrapper.BookRepository.FindByCondition(b => b.Title == book.Title).FirstOrDefault().BookId;
+
+            UploadBookCover(book.CoverImage, bookId);
+
+
         }
 
         public void UpdateBook(NewBookModel book)
@@ -114,6 +132,51 @@ namespace WebApplication.Services
             return GetAll().OrderByDescending(b => b.BookId).Take(number);     
         }
 
-        
+
+        [HttpPost]
+        public void UploadBookCover(IFormFile file, int bookId)
+        {
+
+
+            if(file != null)
+            {
+                
+                var uniqueFileName = GetUniqueFileName(file.FileName);
+
+                var folderPath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot\\images", "bookCovers");
+
+                var filePath = Path.Combine(folderPath, uniqueFileName);
+
+                file.CopyTo(new FileStream(filePath, FileMode.Create));
+
+                var relativePath = "/images/bookCovers/" + uniqueFileName;
+
+                repositoryWrapper.BookRepository
+                            .FindByCondition(b => b.BookId == bookId)
+                            .FirstOrDefault()
+                            .ImageUrl = relativePath;
+            }           
+            else
+            {
+                repositoryWrapper.BookRepository
+                            .FindByCondition(b => b.BookId == bookId)
+                            .FirstOrDefault()
+                            .ImageUrl = "/images/bookCovers/defaultCover";
+            }
+            
+
+        }
+
+        private string GetUniqueFileName(string fileName)
+        {
+            fileName = Path.GetFileName(fileName);
+            return Path.GetFileNameWithoutExtension(fileName)
+                      + "_"
+                      + Guid.NewGuid().ToString().Substring(0, 4)
+                      + Path.GetExtension(fileName);
+        }
+
+
+
     }
 }

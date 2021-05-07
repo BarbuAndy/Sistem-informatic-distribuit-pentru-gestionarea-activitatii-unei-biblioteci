@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Olympia_Library.Data;
 using Olympia_Library.Models.BookModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -57,24 +59,26 @@ namespace WebApplication.Controllers
             return View(_bookService.BuildBookDetailModel(id));
         }
 
-        public IActionResult Create()
+        public IActionResult AddBook()
         {
-            var model = new NewBookModel();
-            return View(model);
+            return View(new NewBookModel());
         }
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult AddBook(NewBookModel book)
+        public IActionResult AddBook(NewBookModel book)
         {
-            
+
             try
             {
+
                 _bookService.AddBook(book);
+
                 _bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
-            }
+            }       
+                          
             catch
             {
                 ViewData["Message"] = "0";
@@ -83,6 +87,8 @@ namespace WebApplication.Controllers
             return View();
 
         }
+
+        
 
         public IActionResult RemoveBookForm()
         {
@@ -136,6 +142,8 @@ namespace WebApplication.Controllers
             }
             return RedirectToAction("Detail", "Book", new {book.Id });
         }
+
+        
 
     }
 }
