@@ -50,15 +50,14 @@ namespace WebApplication.Services
 
             var bookId = repositoryWrapper.BookRepository.FindByCondition(b => b.Title == book.Title).FirstOrDefault().BookId;
 
-            UploadBookCover(book.CoverImage, bookId);
-            Save();
+            UpdateBookCover(book.CoverImage, bookId);
+
 
         }
 
         public void UpdateBook(NewBookModel book)
         {
-            Book updated_book = new Book();
-            updated_book = GetBooksByCondition(b => b.Title == book.Title).First();
+            Book updated_book = GetBooksByCondition(b => b.Title == book.Title).First();
 
             if(book.AuthorName!=null)
                 updated_book.AuthorId = (_authorService
@@ -74,6 +73,11 @@ namespace WebApplication.Services
             {
                 updated_book.GenreId = book.GenreId;
             }
+
+            if(book.CoverImage != null)
+            {
+                UpdateBookCover(book.CoverImage, updated_book.BookId);
+            }              
 
             repositoryWrapper.BookRepository.Update(updated_book);
         }
@@ -106,7 +110,9 @@ namespace WebApplication.Services
 
         public NewBookModel BuildBookDetailModel(int id)
         {
-            var book = repositoryWrapper.BookRepository.FindByCondition(b => b.BookId == id).FirstOrDefault();
+
+            var book = GetBooksByCondition(b => b.BookId == id).FirstOrDefault();
+
             var bookModel = new NewBookModel
             {
                 Title = book.Title,
@@ -134,7 +140,7 @@ namespace WebApplication.Services
 
 
         [HttpPost]
-        public void UploadBookCover(IFormFile file, int bookId)
+        public void UpdateBookCover(IFormFile file, int bookId)
         {
 
 
@@ -155,13 +161,14 @@ namespace WebApplication.Services
                             .FindByCondition(b => b.BookId == bookId)
                             .FirstOrDefault()
                             .ImageUrl = relativePath;
-            }           
+            }        
+            
             else
+
             {
-                repositoryWrapper.BookRepository
-                            .FindByCondition(b => b.BookId == bookId)
+                GetBooksByCondition(book => book.BookId == bookId)
                             .FirstOrDefault()
-                            .ImageUrl = "/images/bookCovers/defaultCover";
+                            .ImageUrl = "/images/bookCovers/defaultCover.jpg";
             }
             
 

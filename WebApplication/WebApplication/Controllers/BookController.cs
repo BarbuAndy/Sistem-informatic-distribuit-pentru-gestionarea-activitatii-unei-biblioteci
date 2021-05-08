@@ -56,7 +56,7 @@ namespace WebApplication.Controllers
 
         public IActionResult Detail(int id)
         {
-            return View(_bookService.BuildBookDetailModel(id));
+                return View(_bookService.BuildBookDetailModel(id));    
         }
 
         public IActionResult AddBook()
@@ -74,7 +74,7 @@ namespace WebApplication.Controllers
 
                 _bookService.AddBook(book);
 
-                //_bookService.Save();
+                _bookService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
             }       
@@ -90,7 +90,7 @@ namespace WebApplication.Controllers
 
         
 
-        public IActionResult RemoveBookForm()
+        public IActionResult RemoveBook()
         {
             var model = new NewBookModel { };
             return View(model);
@@ -117,7 +117,7 @@ namespace WebApplication.Controllers
         }
 
 
-        public IActionResult EditBookForm()
+        public IActionResult EditBook()
         {
             var model = new NewBookModel { };
             return View(model);
@@ -140,7 +140,7 @@ namespace WebApplication.Controllers
             {
                 ViewData["Message"] = ViewData["Message"] + "0";
             }
-            return RedirectToAction("Detail", "Book", new {book.Id });
+            return View();
         }
 
         
