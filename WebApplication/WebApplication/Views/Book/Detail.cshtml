@@ -6,21 +6,31 @@
     </head>
 
 
-    <div class="container ">
+    <div class="container book-detail">
         <div class="row detail-content">
-            <div class="col-md-4">
-                <div class="row">
+            <div class="col-sm-4">
+                
                     <img src="@Model.ImageUrl" class="book-detail-image" />
-                </div>
+                    
+                
             </div>
             <div class="col-md-6 book-detail-description">
                 <span>Title :  @Model.Title</span>
-                <span>Genre: <a asp-controller="Genre" asp-action="Index" asp-route-id="@Model.GenreId">
-                                @Model.GenreName
-                            </a></span>
+                <span>
+                    Genre: <a asp-controller="Genre" asp-action="Index" asp-route-id="@Model.GenreId">
+                        @Model.GenreName
+                    </a>
+                </span>
                 <span>Author: @Model.AuthorName</span>
-
+                
+                <span>
+                    <button class="btn btn-dark" id="btnBorrow">
+                        Borrow
+                    </button>
+                </span>
             </div>
         </div>
-        
+        <div class="row">
+            
+        </div>
     </div>

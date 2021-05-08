@@ -26,10 +26,11 @@
                                 if (book.GenreId == genre.Id)
                                 {
                                     <div class="item">
-                                        <a asp-controller="Book" asp-action="Detail" asp-route-id="@book.BookId">
-                                            <img class="bookImage" src="@book.ImageUrl" />
-                                        </a>
-
+                                        <div class="d-block">
+                                            <a asp-controller="Book" asp-action="Detail" asp-route-id="@book.BookId">
+                                                <img class="bookImage" src="@book.ImageUrl" />
+                                            </a>
+                                        </div>                                                                                                                                                           
 
                                     </div>
                                 }

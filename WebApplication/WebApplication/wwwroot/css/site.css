@@ -14,8 +14,8 @@ a.navbar-brand {
 
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+a:link {
+    text-decoration: none !important;
 }
 
 .btn-primary {
@@ -184,6 +184,3 @@ body {
     position:relative;
 }
 
-.carousel-section{
-
-}
