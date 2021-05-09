@@ -12,7 +12,10 @@ a.navbar-brand {
     position: relative;
 }
 
+#navMenu ul{
+    margin:auto;
 
+}
 /* Provide sufficient contrast against white background */
 a:link {
     text-decoration: none !important;
