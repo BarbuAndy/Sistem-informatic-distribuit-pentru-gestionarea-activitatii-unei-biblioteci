@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Olympia_Library.Models.GenreModel;
 
 namespace WebApplication.Services
 {
@@ -172,6 +173,51 @@ namespace WebApplication.Services
             }
             
 
+        }
+        [HttpPost]
+        public void UpdateGenreIcon(IFormFile file, int genreId)
+        {
+            if (file != null)
+            {
+
+                var uniqueFileName = GetUniqueFileName(file.FileName);
+
+                var folderPath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot\\images", "genreIcons");
+
+                var filePath = Path.Combine(folderPath, uniqueFileName);
+
+                file.CopyTo(new FileStream(filePath, FileMode.Create));
+
+                var relativePath = "/images/genreIcons/" + uniqueFileName;
+
+                repositoryWrapper.GenreRepository
+                            .FindByCondition(b => b.Id == genreId)
+                            .FirstOrDefault()
+                            .ImageUrl = relativePath;
+            }
+
+            else
+
+            {
+                repositoryWrapper.GenreRepository
+                            .FindByCondition(genre => genre.Id == genreId)
+                            .FirstOrDefault()
+                            .ImageUrl = "/images/genreIcons/defaultIcon.png";
+            }
+        }
+
+        public void AddGenre(NewGenreModel model)
+        {
+            var newGenre = new Genre
+            {
+                Name = model.Name
+            };
+
+            repositoryWrapper.GenreRepository.Create(newGenre);
+
+            Save();
+
+            UpdateGenreIcon(model.ImageFile, newGenre.Id);
         }
 
         private string GetUniqueFileName(string fileName)

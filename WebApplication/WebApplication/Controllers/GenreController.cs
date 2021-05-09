@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Olympia_Library.Data;
 using Olympia_Library.Models.BookModel;
 using Olympia_Library.Models.GenreModel;
 using System;
@@ -35,5 +36,43 @@ namespace Olympia_Library.Controllers
 
             return View(model);
         }
+
+        public IActionResult AddGenre()
+        {
+            return View(new NewGenreModel { });
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public IActionResult AddGenre(NewGenreModel model)
+        {
+            
+            
+            try
+            {
+                //daca genul deja este in baza de date, atunci doar se updateaza iconul
+                if(_repositoryWrapper.GenreRepository.FindByCondition(genre => genre.Name == model.Name).Any())
+                {
+                    _bookService.UpdateGenreIcon(model.ImageFile, _repositoryWrapper.GenreRepository.FindByCondition(genre => genre.Name == model.Name).FirstOrDefault().Id);
+                    _bookService.Save();
+                    ModelState.Clear();
+                    return View();
+                }
+
+                _bookService.AddGenre(model);
+
+                _bookService.Save();
+                ModelState.Clear();
+                ViewData["Message"] = "1";
+            }
+
+            catch
+            {
+                ViewData["Message"] = "0";
+            }
+
+            return View();
+        }
+
+        
     }
 }

@@ -338,3 +338,4 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationUser\Details.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationUser\Edit.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\ApplicationUser\Index.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Genre\AddGenre.cshtml.g.cs
