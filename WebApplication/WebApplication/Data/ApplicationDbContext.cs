@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Olympia_Library.Models;
 
 namespace Olympia_Library.Data
 {
@@ -21,5 +22,6 @@ namespace Olympia_Library.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Olympia_Library.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
     }
 }
