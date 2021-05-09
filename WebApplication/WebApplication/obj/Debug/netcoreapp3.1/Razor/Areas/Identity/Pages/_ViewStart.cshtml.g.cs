@@ -12,7 +12,29 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "E:\facultate\Proiect Databases\WebApplication\WebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "E:\facultate\Proiect Databases\WebApplication\WebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
+using Olympia_Library.Areas.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "E:\facultate\Proiect Databases\WebApplication\WebApplication\Areas\Identity\Pages\_ViewImports.cshtml"
+using Olympia_Library.Areas.Identity.Pages;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"13b82ef97968a56a4de533f67cf3e21d662f41aa", @"/Areas/Identity/Pages/_ViewStart.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ef111ee35ce9b9d043dd0db11aca36a1fb7f25b9", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
