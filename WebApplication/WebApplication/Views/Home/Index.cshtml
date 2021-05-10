@@ -21,10 +21,14 @@
                 <div class="MultiCarousel-inner">
                     @foreach (var genre in Model.Genres)
                     {
-                        <div class="item">
-                            <img class="genre-image" src="url(@genre.ImageUrl)" />
+                    <div class="item">
+                        
+                            <a asp-controller="Genre" asp-action="Index" asp-route-id="@genre.Id">
+                                <img class="genre-image" src="@genre.ImageUrl" />
+                            </a>
+                        
 
-                        </div>
+                    </div>
                     }
                 </div>
 

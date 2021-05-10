@@ -43,13 +43,19 @@ namespace Olympia_Library.Services
             
 
             var genres = repositoryWrapper.GenreRepository.FindByCondition(g => !string.IsNullOrEmpty(g.Name));
-            foreach(var genre in genres)
+
+            if (IsNullGenreImage())
             {
-                if (string.IsNullOrEmpty(genre.ImageUrl))
+                foreach (var genre in genres)
                 {
-                    genre.ImageUrl = "images/genreIcons/defaultIcon.png";
+                    if (string.IsNullOrEmpty(genre.ImageUrl))
+                    {
+                        genre.ImageUrl = "/images/genreIcons/defaultIcon.png";
+                    }
                 }
+                Save();
             }
+            
 
             return new HomeIndexModel {
                 BookListing = bookListing,
@@ -59,5 +65,11 @@ namespace Olympia_Library.Services
 
         }
 
+        private bool IsNullGenreImage()
+        {
+            if (repositoryWrapper.GenreRepository.FindByCondition(g => g.ImageUrl == null).Any())
+                return true;
+            else return false;
+        }
     }
 }
