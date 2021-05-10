@@ -1,0 +1,33 @@
+﻿@model WebApplication.Models.BookModel
+
+
+    <head>
+        <link rel="stylesheet" href="~/css/booksStyle.css" />
+    </head>
+
+
+    <div class="container book-detail">
+        <div class="row detail-content">
+            <div class="col-sm-4">
+                
+                    <img src="@Model.ImageUrl" class="book-detail-image" />
+                    
+                
+            </div>
+            <div class="col-md-6 book-detail-description">
+                <span>Title :  @Model.Title</span>
+
+                <span>Author: @Model.AuthorName</span>
+               
+
+                <span>
+                    <button class="btn btn-dark" id="btnBorrow">
+                        Borrow
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
