@@ -17,6 +17,7 @@ body {
     width:140px;
 
 }
+
 .book-detail {
     padding:20px 0 20px 0;
 }
@@ -40,3 +41,10 @@ body {
     
 }
 
+a :link{
+    color: black;
+}
+
+    a:link:hover {
+        color: rgb(72 72 72);
+    }

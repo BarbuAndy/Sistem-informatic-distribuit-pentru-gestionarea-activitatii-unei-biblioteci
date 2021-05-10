@@ -22,7 +22,7 @@ namespace Olympia_Library.Services
         {
             var books = _bookService.GetAll();
 
-            var latestAdditions = _bookService.GetLatestAdditions(10)
+            var latestAdditions = _bookService.GetLatestAdditions(8)
                 .Select(b => new BookListingModel {
                     Title = b.Title,
                     AuthorId = b.AuthorId,

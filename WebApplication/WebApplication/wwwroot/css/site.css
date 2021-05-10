@@ -34,6 +34,13 @@ a:link {
     border-color: #1861ac;
 }
 
+
+a{
+    color:black;
+}
+    a:hover {
+        color: rgb(103 103 103);
+    }
 /* Sticky footer styles
 -------------------------------------------------- */
 

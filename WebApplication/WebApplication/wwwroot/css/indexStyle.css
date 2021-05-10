@@ -3,18 +3,23 @@
     width:40px;
 }
 
-.latest-additions-image{
-    height:90px;
-    width:60px;
-    margin-right:20px;
+.latestAdditions{
+    display:block;
+
+}
+.latest-additions-image {
+    height: 150px;
+    width: 120px;
+    margin-right: 20px;
+    display: inline-block;
+}
+.latest-additions-book{
     display:inline-block;
 }
-
 .homeContent {
     padding: 20px;
     margin: 18px, 0, 18px, 0;
     background: rgba(186, 186, 186, 0.5);
-    
 }
 
 #test-body-mobile {
@@ -29,10 +34,29 @@
     position: relative;
 }
 
+.mainIndex{
+    padding:12px;
+}
+.homeIndexSection {
+    margin: 20px 0 20px 0;
+    padding: 20px;
+}
+
+.genreCarousel{
+    padding:20px;
+}
+.genreCarousel a{
+    color:black;
+}
+    .genreCarousel a:hover {
+        color:rgb(103 103 103);
+    }
+
 .MultiCarousel {
     float: left;
     overflow: hidden;
-    padding: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     width: 100%;
     position: relative;
     background: none;
@@ -43,7 +67,6 @@
         float: left;
         width:100%;
         position:center;
-        margin-top:45px;
         margin-left:30px;
         margin-right:30px;
     }
