@@ -25,6 +25,9 @@ body {
 .book-detail-image {
     height: 100%;
     width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .detail-content{
@@ -36,9 +39,11 @@ body {
     margin:40px;
     font-size:1.5em;
 }
+.book-detail-description{
+    border-left:2px solid rgb(127 127 127);
+}
 
-#btnBorrow{
-    
+#btnBorrow {
 }
 
 a :link{
