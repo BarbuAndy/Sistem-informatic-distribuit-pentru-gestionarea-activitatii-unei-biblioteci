@@ -30,3 +30,9 @@ V1.5.2
 V1.5.3
 -list of books automatically pops-up when deleting books
 -list of books and list of authors pops-up when title/author name is entered
+
+
+V2.0
+-working inventory, books can be added and subtracted from branches inventory
+-users can borrow books and see the books they borrowed on their profile tab
+-front page is completed, books are displayed by genre and genre are displayed on the front page
