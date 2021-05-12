@@ -26,12 +26,13 @@ namespace Olympia_Library.Controllers
             _userManager = userManager;
             _borrowService = borrowService;
         }
+        [Authorize]
         public IActionResult Borrow(string title)
         {
 
             return View(_branchService.GetBranchesModelContainingBook(title));
         }
-       // [Authorize]   ENABLE AUTHORIZE AFTER TESTING
+        [Authorize]
         public IActionResult BorrowSpecific(string branchname,string booktitle)
         {
 

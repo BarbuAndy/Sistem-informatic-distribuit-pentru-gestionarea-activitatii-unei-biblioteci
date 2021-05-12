@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\An3\\Sem2\\proiect3\\WebApp2.0\\WebApplication\\Olympia Library.csproj": {}
+    "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj": {}
   },
   "projects": {
-    "C:\\An3\\Sem2\\proiect3\\WebApp2.0\\WebApplication\\Olympia Library.csproj": {
+    "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\An3\\Sem2\\proiect3\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
+        "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
         "projectName": "Olympia Library",
-        "projectPath": "C:\\An3\\Sem2\\proiect3\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\An3\\Sem2\\proiect3\\WebApp2.0\\WebApplication\\obj\\",
+        "projectPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
+        "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
+        "outputPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -95,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.114\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

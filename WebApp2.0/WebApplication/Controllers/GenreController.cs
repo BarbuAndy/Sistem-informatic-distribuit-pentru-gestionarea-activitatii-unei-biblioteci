@@ -15,10 +15,13 @@ namespace Olympia_Library.Controllers
     {
         private readonly BookService _bookService;
         private readonly IRepositoryWrapper _repositoryWrapper;
-        public GenreController(BookService bookService, IRepositoryWrapper repositoryWrapper)
+        private readonly GenreService _genreService;
+
+        public GenreController(BookService bookService, IRepositoryWrapper repositoryWrapper, GenreService genreService)
         {
             _bookService = bookService;
             _repositoryWrapper = repositoryWrapper;
+            _genreService = genreService;
         }
 
         public IActionResult Index(int id)
@@ -39,17 +42,18 @@ namespace Olympia_Library.Controllers
 
         public IActionResult AddGenre()
         {
-            return View();
+            return View(new NewGenreModel { });
         }
+
         [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult AddGenre(NewGenreModel model)
         {
             try
             {
-                _bookService.AddGenre(model);
+                _genreService.AddGenre(model);
 
-                _bookService.Save();
+                _genreService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
             }
@@ -62,6 +66,37 @@ namespace Olympia_Library.Controllers
             return View();
         }
 
-        
+        public IActionResult EditGenre()
+        {
+            return View(new NewGenreModel { });
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public IActionResult EditGenre(NewGenreModel model)
+        {
+            if(model.Name == null)
+            {
+                return View();
+            }
+
+
+            try
+            {
+
+                _genreService.UpdateGenre(model);
+                _genreService.Save();
+                ModelState.Clear();
+                ViewData["Message"] = "1";
+            }
+
+            catch
+            {
+                ViewData["Message"] = "0";
+            }
+            
+
+            return View();
+        }
     }
 }

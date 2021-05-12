@@ -12,5 +12,6 @@ namespace Olympia_Library.Models.GenreModel
         public string Name { get; set; }
         public string ImageUrl { get; set; }
         public IFormFile ImageFile { get; set; }
+        public string NewName { get; set; }
     }
 }
