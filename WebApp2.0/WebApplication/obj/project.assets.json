@@ -9183,19 +9183,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\barbu\\.nuget\\packages\\": {}
+    "C:\\Users\\ionut\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\Olympia Library.csproj",
+      "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
       "projectName": "Olympia Library",
-      "projectPath": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\Olympia Library.csproj",
-      "packagesPath": "C:\\Users\\barbu\\.nuget\\packages\\",
-      "outputPath": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\obj\\",
+      "projectPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
+      "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
+      "outputPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\barbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9278,7 +9278,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
