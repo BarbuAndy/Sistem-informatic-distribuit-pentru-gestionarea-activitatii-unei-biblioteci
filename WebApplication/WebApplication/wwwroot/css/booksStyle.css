@@ -15,16 +15,23 @@ body {
 .bookImage{
     height:200px;
     width:140px;
-
+    
 }
 
 .book-detail {
     padding:20px 0 20px 0;
 }
 
+.book-detail-description{
+    border-left:2px grey solid;
+}
+
 .book-detail-image {
     height: 100%;
     width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .detail-content{

@@ -100,10 +100,7 @@ E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\BookSpecial.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Book\Detail.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\CreateAuthor.cshtml.g.cs
 E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Home\AdminActions.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\EditAuthorForm.cshtml.g.cs
-E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\RemoveAuthorForm.cshtml.g.cs
 C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\ionut\OneDrive\Desktop\asmd\WebApplication\WebApplication\bin\Debug\netcoreapp3.1\Olympia Library.StaticWebAssets.xml
@@ -570,3 +567,6 @@ C:\Users\barbu\Downloads\WebApplication\WebApplication\WebApplication\obj\Debug\
 C:\Users\barbu\Downloads\WebApplication\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\EditAuthor.cshtml.g.cs
 C:\Users\barbu\Downloads\WebApplication\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\RemoveAuthor.cshtml.g.cs
 C:\Users\barbu\Downloads\WebApplication\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\AddAuthor.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\AddAuthor.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\EditAuthor.cshtml.g.cs
+E:\facultate\Proiect Databases\WebApplication\WebApplication\obj\Debug\netcoreapp3.1\Razor\Views\AdminAuthor\RemoveAuthor.cshtml.g.cs

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barbu\\Downloads\\WebApplication\\WebApplication\\WebApplication\\Olympia Library.csproj": {}
+    "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barbu\\Downloads\\WebApplication\\WebApplication\\WebApplication\\Olympia Library.csproj": {
+    "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barbu\\Downloads\\WebApplication\\WebApplication\\WebApplication\\Olympia Library.csproj",
+        "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj",
         "projectName": "Olympia Library",
-        "projectPath": "C:\\Users\\barbu\\Downloads\\WebApplication\\WebApplication\\WebApplication\\Olympia Library.csproj",
-        "packagesPath": "C:\\Users\\barbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barbu\\Downloads\\WebApplication\\WebApplication\\WebApplication\\obj\\",
+        "projectPath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\Olympia Library.csproj",
+        "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
+        "outputPath": "E:\\facultate\\Proiect Databases\\WebApplication\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\barbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
