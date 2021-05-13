@@ -129,6 +129,15 @@ namespace WebApplication.Services
             return GetAll().OrderByDescending(b => b.BookId).Take(number);
         }
 
+        public Book GetRandomBook()
+        {
+            var bookList = GetAll().ToList();
+            var random = new Random();
+            List<int> bookIdList = bookList.Select(o => o.BookId).ToList();
+            var randomIdIndex = random.Next(bookIdList.Count);
+            return bookList[randomIdIndex];
+
+        }
 
         [HttpPost]
         public string UpdateBookCover(IFormFile file)

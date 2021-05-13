@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PQkFywn+7hCtEOpiuCBqlBmxNOw55w2/DMOZMAyvJCGIFzuj+VS0mOqpYFh81hd0ApOMRK6tofbV0TgMuuXebA==",
+  "dgSpecHash": "g3j1OfgPB7fCZzh/TBML1PJeC8F3MkfqbvE5zIxYbyWfkxS9OO4h88hPOCMutIiveZ0u7/4PJuc5GQVWEGc50A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
+  "projectFilePath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ionut\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",

@@ -145,6 +145,14 @@ namespace WebApplication.Controllers
             return View();
         }
 
+        public IActionResult RandomBook()
+        {
+
+            var randomBookId = _bookService.GetRandomBook().BookId;
+            
+            return RedirectToAction("Detail", "Book", new {id = randomBookId });
+        }
+
         [Authorize(Roles = "Admin")]
         public ActionResult GetAuthors()
         {

@@ -10206,11 +10206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
+      "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
       "projectName": "OlympiaLibraryTests",
-      "projectPath": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
+      "projectPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
       "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\OlympiaLibraryTests\\obj\\",
+      "outputPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\OlympiaLibraryTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10227,8 +10227,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\WebApplication\\Olympia Library.csproj": {
-              "projectPath": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\WebApplication\\Olympia Library.csproj"
+            "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj": {
+              "projectPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj"
             }
           }
         }

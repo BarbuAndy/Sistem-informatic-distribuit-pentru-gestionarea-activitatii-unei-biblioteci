@@ -34,6 +34,7 @@
                         <li><a asp-controller="Book" asp-action="Index" class="nav-link text-dark">Books</a></li>
                         <li><a asp-controller="Home" asp-action="BookSpecial" class="nav-link text-dark">Book of the day</a></li>
                         <li><a asp-controller="Home" asp-action="About" class="nav-link text-dark">About</a></li>                 
+                        <li><a asp-controller="Book" asp-action="RandomBook" class="nav-link text-dark">Random Book</a></li>                 
                         
                         @{if (User.IsInRole("Admin")) { 
                         <li><a asp-controller="Home" asp-action="AdminActions" class="nav-link text-dark">Admin privileges</a></li>
