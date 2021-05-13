@@ -43,10 +43,9 @@ namespace WebApplication.Services
             repositoryWrapper.AuthorRepository.Update(updated_author);
         }
 
-        public async Task DeleteAuthor(AuthorModel author)
+        public void DeleteAuthor(AuthorModel author)
         {
             repositoryWrapper.AuthorRepository.Delete(GetAuthorByCondition(b => b.Name == author.Name).First());
-            await _context.SaveChangesAsync();
         }
 
         public List<Author> GetAuthorByCondition(Expression<Func<Author, bool>> expression)

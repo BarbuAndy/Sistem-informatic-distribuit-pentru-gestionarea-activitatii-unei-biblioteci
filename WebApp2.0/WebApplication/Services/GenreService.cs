@@ -50,20 +50,6 @@ namespace WebApplication.Services
                 var oldIconRelativePath = repositoryWrapper.GenreRepository.FindByCondition(g => g.Id == genreId).FirstOrDefault().ImageUrl;
                 var filePath = Path.Combine(folderPath, uniqueFileName);
 
-                //var oldFileName = @oldIconRelativePath.Split("/").Last();
-
-
-                //if (oldIconRelativePath != null && !oldIconRelativePath.Contains("default"))
-                //{
-                //    try
-                //    {
-                //        File.Delete(oldFileName);
-                //    }
-                //    catch
-                //    {
-
-                //    }
-                //}
 
                 file.CopyTo(new FileStream(filePath, FileMode.Create));
 

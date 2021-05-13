@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Olympia_Library.Data;
 using Olympia_Library.Models.BookModel;
@@ -14,6 +15,7 @@ using WebApplication.Services;
 
 namespace WebApplication.Controllers
 {
+
     public class BookController : Controller
     {
         private readonly BookService _bookService;
@@ -61,6 +63,7 @@ namespace WebApplication.Controllers
                 return View(_bookService.BuildBookDetailModel(id));    
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult AddBook()
         {
             return View(new BookModel());
@@ -68,6 +71,7 @@ namespace WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddBook(BookModel book)
         {
             try
@@ -88,7 +92,7 @@ namespace WebApplication.Controllers
 
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult RemoveBook()
         {
             return View();
@@ -97,6 +101,7 @@ namespace WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult RemoveBook(BookModel book)
         {
 
@@ -114,7 +119,7 @@ namespace WebApplication.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult EditBook()
         {
             return View();
@@ -123,7 +128,7 @@ namespace WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-
+        [Authorize(Roles = "Admin")]
         public ActionResult EditBook(BookModel book)
         {
             try
@@ -140,18 +145,20 @@ namespace WebApplication.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult GetAuthors()
         {
             return Json(_authorService.ExtractAuthorNames());
 
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult GetTitles()
         {
             return Json(_bookService.ExtractBookTitles());
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult GetGenres()
         {
             return Json(_genreService.ExtractGenres());

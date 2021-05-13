@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Olympia_Library.Data;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using WebApplication.Services;
 
 namespace WebApplication.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminBranchController : Controller
     {
         private readonly BranchService _branchService;

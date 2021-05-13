@@ -44,7 +44,7 @@ namespace WebApplication.Services
             new_book.ImageUrl = book.ImageUrl;
             repositoryWrapper.BookRepository.Create(new_book);
 
-            //UpdateBookCover(book.CoverImage, new_book.BookId);
+            new_book.ImageUrl = UpdateBookCover(book.CoverImage);
 
         }
 
@@ -69,7 +69,7 @@ namespace WebApplication.Services
 
             if (book.CoverImage != null)
             {
-                UpdateBookCover(book.CoverImage, updated_book.BookId);
+                updated_book.ImageUrl = UpdateBookCover(book.CoverImage);
             }
 
             repositoryWrapper.BookRepository.Update(updated_book);
@@ -131,7 +131,7 @@ namespace WebApplication.Services
 
 
         [HttpPost]
-        public void UpdateBookCover(IFormFile file, int bookId)
+        public string UpdateBookCover(IFormFile file)
         {
 
             if (file != null)
@@ -140,29 +140,21 @@ namespace WebApplication.Services
                 var uniqueFileName = GetUniqueFileName(file.FileName);
 
                 var folderPath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot\\images", "bookCovers");
-                var oldFilePath = Path.Combine(folderPath, GetBooksByCondition(b => b.BookId == bookId).FirstOrDefault().ImageUrl);
                 var filePath = Path.Combine(folderPath, uniqueFileName);
 
                 file.CopyTo(new FileStream(filePath, FileMode.Create));
 
-                var relativePath = "/images/bookCovers/" + uniqueFileName;
+                return  "/images/bookCovers/" + uniqueFileName;
 
-                repositoryWrapper.BookRepository
-                            .FindByCondition(b => b.BookId == bookId)
-                            .FirstOrDefault()
-                            .ImageUrl = relativePath;
+
             }
 
             else
 
-            {
-                GetBooksByCondition(book => book.BookId == bookId)
-                            .FirstOrDefault()
-                            .ImageUrl = "/images/bookCovers/defaultCover.jpg";
-            }
-
+                return  "/images/bookCovers/defaultCover.jpg";
 
         }
+
         private string GetUniqueFileName(string fileName)
         {
             fileName = Path.GetFileName(fileName);

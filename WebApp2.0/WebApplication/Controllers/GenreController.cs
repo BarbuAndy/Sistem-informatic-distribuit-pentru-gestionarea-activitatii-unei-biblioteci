@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Olympia_Library.Data;
 using Olympia_Library.Models.BookModel;
 using Olympia_Library.Models.GenreModel;
@@ -40,6 +41,7 @@ namespace Olympia_Library.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult AddGenre()
         {
             return View(new NewGenreModel { });
@@ -47,6 +49,7 @@ namespace Olympia_Library.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddGenre(NewGenreModel model)
         {
             try
@@ -66,6 +69,7 @@ namespace Olympia_Library.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult EditGenre()
         {
             return View(new NewGenreModel { });
@@ -73,6 +77,7 @@ namespace Olympia_Library.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult EditGenre(NewGenreModel model)
         {
             if(model.Name == null)

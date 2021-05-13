@@ -13,7 +13,7 @@
 
         <div class="form-group">
             <div class="col-md-4">
-                <p>Upload Book Cover</p>
+                <p>Upload Genre Cover</p>
                 <input type="file" asp-for="ImageFile" />
             </div>
         </div>
@@ -21,8 +21,8 @@
         <div class="form-group">
             <input type="submit" class="btn btn-primary btn-dark" />
         </div>
-        @{ if (ViewData["Message"] == "1") @Html.Raw("<p style=\"color:green\">Book details changed</p>"); }
-        @{ if (ViewData["Message"] == "0") @Html.Raw("<p style=\"color:red\">Book details could not be changed</p>"); }
+        @{ if (ViewData["Message"] == "1") @Html.Raw("<p style=\"color:green\">Genre details changed</p>"); }
+        @{ if (ViewData["Message"] == "0") @Html.Raw("<p style=\"color:red\">Genre details could not be changed</p>"); }
 
     </form>
 </div>

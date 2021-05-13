@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Olympia_Library.Services;
 using System;
@@ -35,6 +36,7 @@ namespace WebApplication.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult AdminActions()
         {
             return View();

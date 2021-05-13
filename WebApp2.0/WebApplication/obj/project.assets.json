@@ -9188,11 +9188,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
+      "projectUniqueName": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
       "projectName": "Olympia Library",
-      "projectPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
+      "projectPath": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\WebApplication\\Olympia Library.csproj",
       "packagesPath": "C:\\Users\\ionut\\.nuget\\packages\\",
-      "outputPath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\obj\\",
+      "outputPath": "C:\\Users\\ionut\\OneDrive\\Desktop\\WebApp2.0\\WebApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ionut\\AppData\\Roaming\\NuGet\\NuGet.Config",
