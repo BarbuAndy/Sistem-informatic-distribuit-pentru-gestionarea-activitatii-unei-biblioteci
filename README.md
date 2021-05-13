@@ -24,3 +24,15 @@ V1.5
 -birth date and deceased status added to authors
 -authors can be added, edited and deleted from front end
 
+V1.5.2
+-when adding a new book, the list of authors automatically pops-up for easier author select  ----to be added to all fields
+
+V1.5.3
+-list of books automatically pops-up when deleting books
+-list of books and list of authors pops-up when title/author name is entered
+
+
+V2.0
+-working inventory, books can be added and subtracted from branches inventory
+-users can borrow books and see the books they borrowed on their profile tab
+-front page is completed, books are displayed by genre and genre are displayed on the front page
