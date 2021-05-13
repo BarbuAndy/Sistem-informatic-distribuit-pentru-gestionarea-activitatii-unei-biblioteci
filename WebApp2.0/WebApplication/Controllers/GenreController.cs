@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Olympia_Library.Data;
 using Olympia_Library.Models.BookModel;
 using Olympia_Library.Models.GenreModel;
@@ -15,10 +16,13 @@ namespace Olympia_Library.Controllers
     {
         private readonly BookService _bookService;
         private readonly IRepositoryWrapper _repositoryWrapper;
-        public GenreController(BookService bookService, IRepositoryWrapper repositoryWrapper)
+        private readonly GenreService _genreService;
+
+        public GenreController(BookService bookService, IRepositoryWrapper repositoryWrapper, GenreService genreService)
         {
             _bookService = bookService;
             _repositoryWrapper = repositoryWrapper;
+            _genreService = genreService;
         }
 
         public IActionResult Index(int id)
@@ -37,19 +41,22 @@ namespace Olympia_Library.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult AddGenre()
         {
-            return View();
+            return View(new NewGenreModel { });
         }
+
         [ValidateAntiForgeryToken]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddGenre(NewGenreModel model)
         {
             try
             {
-                _bookService.AddGenre(model);
+                _genreService.AddGenre(model);
 
-                _bookService.Save();
+                _genreService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";
             }
@@ -62,6 +69,39 @@ namespace Olympia_Library.Controllers
             return View();
         }
 
-        
+        [Authorize(Roles = "Admin")]
+        public IActionResult EditGenre()
+        {
+            return View(new NewGenreModel { });
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult EditGenre(NewGenreModel model)
+        {
+            if(model.Name == null)
+            {
+                return View();
+            }
+
+
+            try
+            {
+
+                _genreService.UpdateGenre(model);
+                _genreService.Save();
+                ModelState.Clear();
+                ViewData["Message"] = "1";
+            }
+
+            catch
+            {
+                ViewData["Message"] = "0";
+            }
+            
+
+            return View();
+        }
     }
 }

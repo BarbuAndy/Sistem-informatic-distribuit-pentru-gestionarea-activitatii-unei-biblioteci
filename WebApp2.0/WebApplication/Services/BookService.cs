@@ -21,9 +21,10 @@ namespace WebApplication.Services
         private readonly AuthorService _authorService;
         private readonly IHostEnvironment _hostEnvironment;
         private readonly GenreService _genreService;
-        
 
-        public BookService(IRepositoryWrapper repositoryWrapper, AuthorService authorService, IHostEnvironment hostEnvironment,GenreService genreService) : base(repositoryWrapper) {
+
+        public BookService(IRepositoryWrapper repositoryWrapper, AuthorService authorService, IHostEnvironment hostEnvironment, GenreService genreService) : base(repositoryWrapper)
+        {
             _authorService = authorService;
             _hostEnvironment = hostEnvironment;
             _genreService = genreService;
@@ -43,7 +44,7 @@ namespace WebApplication.Services
             new_book.ImageUrl = book.ImageUrl;
             repositoryWrapper.BookRepository.Create(new_book);
 
-            //UpdateBookCover(book.CoverImage, new_book.BookId);
+            new_book.ImageUrl = UpdateBookCover(book.CoverImage);
 
         }
 
@@ -51,7 +52,7 @@ namespace WebApplication.Services
         {
             Book updated_book = GetBooksByCondition(b => b.Title == book.Title).First();
 
-            if(book.AuthorName!=null)
+            if (book.AuthorName != null)
                 updated_book.AuthorId = (_authorService
                     .GetAuthorByCondition(b => b.Name == book.AuthorName)
                     .FirstOrDefault()).AuthorId;
@@ -63,13 +64,13 @@ namespace WebApplication.Services
 
             if (book.Genre != null)
             {
-                updated_book.GenreId = _genreService.FindGenreByCondition(b => b.Name == book.Genre).First().Id ;
+                updated_book.GenreId = _genreService.FindGenreByCondition(b => b.Name == book.Genre).First().Id;
             }
 
-            if(book.CoverImage != null)
+            if (book.CoverImage != null)
             {
-                UpdateBookCover(book.CoverImage, updated_book.BookId);
-            }              
+                updated_book.ImageUrl = UpdateBookCover(book.CoverImage);
+            }
 
             repositoryWrapper.BookRepository.Update(updated_book);
         }
@@ -81,12 +82,12 @@ namespace WebApplication.Services
 
         public void DeleteBook(BookModel book)
         {
-         
+
             var deleted_book = GetBooksByCondition(b => b.Title == book.Title).First();
-            if(deleted_book != null)
+            if (deleted_book != null)
             {
-                repositoryWrapper.BookRepository.Delete(deleted_book);                
-            }         
+                repositoryWrapper.BookRepository.Delete(deleted_book);
+            }
         }
 
         public List<string> ExtractBookTitles()
@@ -125,96 +126,33 @@ namespace WebApplication.Services
 
         public IEnumerable<Book> GetLatestAdditions(int number)
         {
-            return GetAll().OrderByDescending(b => b.BookId).Take(number);     
+            return GetAll().OrderByDescending(b => b.BookId).Take(number);
         }
 
 
         [HttpPost]
-        public void UpdateBookCover(IFormFile file, int bookId)
+        public string UpdateBookCover(IFormFile file)
         {
 
-            if(file != null)
-            {
-                
-                var uniqueFileName = GetUniqueFileName(file.FileName);
-
-                var folderPath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot\\images", "bookCovers");
-
-                var filePath = Path.Combine(folderPath, uniqueFileName);
-
-                file.CopyTo(new FileStream(filePath, FileMode.Create));
-
-                var relativePath = "/images/bookCovers/" + uniqueFileName;
-
-                repositoryWrapper.BookRepository
-                            .FindByCondition(b => b.BookId == bookId)
-                            .FirstOrDefault()
-                            .ImageUrl = relativePath;
-            }        
-            
-            else
-
-            {
-                GetBooksByCondition(book => book.BookId == bookId)
-                            .FirstOrDefault()
-                            .ImageUrl = "/images/bookCovers/defaultCover.jpg";
-            }
-            
-
-        }
-        [HttpPost]
-        public void UpdateGenreIcon(IFormFile file, int genreId)
-        {
             if (file != null)
             {
 
                 var uniqueFileName = GetUniqueFileName(file.FileName);
 
-                var folderPath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot\\images", "genreIcons");
-
+                var folderPath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot\\images", "bookCovers");
                 var filePath = Path.Combine(folderPath, uniqueFileName);
 
                 file.CopyTo(new FileStream(filePath, FileMode.Create));
 
-                var relativePath = "/images/genreIcons/" + uniqueFileName;
+                return  "/images/bookCovers/" + uniqueFileName;
 
-                repositoryWrapper.GenreRepository
-                            .FindByCondition(b => b.Id == genreId)
-                            .FirstOrDefault()
-                            .ImageUrl = relativePath;
+
             }
 
             else
 
-            {
-                repositoryWrapper.GenreRepository
-                            .FindByCondition(genre => genre.Id == genreId)
-                            .FirstOrDefault()
-                            .ImageUrl = "/images/genreIcons/defaultIcon.png";
-            }
-        }
+                return  "/images/bookCovers/defaultCover.jpg";
 
-        public void AddGenre(NewGenreModel model)
-        {
-
-            if (_genreService.FindGenreByCondition(genre => genre.Name == model.Name).Any())
-            {
-                UpdateGenreIcon(model.ImageFile, _genreService.FindGenreByCondition(genre => genre.Name == model.Name).FirstOrDefault().Id);
-            }
-            else
-            {
-
-                var newGenre = new Genre
-                {
-                    Name = model.Name
-                };
-
-                repositoryWrapper.GenreRepository.Create(newGenre);
-
-                Save();
-
-                UpdateGenreIcon(model.ImageFile, newGenre.Id);
-            }
         }
 
         private string GetUniqueFileName(string fileName)
@@ -225,6 +163,7 @@ namespace WebApplication.Services
                       + Guid.NewGuid().ToString().Substring(0, 4)
                       + Path.GetExtension(fileName);
         }
+
 
     }
 }

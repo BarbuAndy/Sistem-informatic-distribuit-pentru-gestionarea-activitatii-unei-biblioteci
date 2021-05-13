@@ -23,5 +23,6 @@ namespace Olympia_Library.Data
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Olympia_Library.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
+
     }
 }

@@ -2,9 +2,11 @@
 using WebApplication.Services;
 using WebApplication.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminAuthorController : Controller
     {
         private readonly AuthorService _authorService;
@@ -47,11 +49,11 @@ namespace WebApplication.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<ActionResult> RemoveAuthor(AuthorModel Author)
+        public ActionResult RemoveAuthor(AuthorModel Author)
         {
             try
             {
-                await _authorService.DeleteAuthor(Author);
+                 _authorService.DeleteAuthor(Author);
                 _authorService.Save();
                 ModelState.Clear();
                 ViewData["Message"] = "1";

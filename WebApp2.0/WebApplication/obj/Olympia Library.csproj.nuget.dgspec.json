@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\Olympia Library.csproj": {}
+    "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final final\\WebApplication\\Olympia Library.csproj": {}
   },
   "projects": {
-    "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\Olympia Library.csproj": {
+    "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final final\\WebApplication\\Olympia Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\Olympia Library.csproj",
+        "projectUniqueName": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final final\\WebApplication\\Olympia Library.csproj",
         "projectName": "Olympia Library",
-        "projectPath": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\Olympia Library.csproj",
+        "projectPath": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final final\\WebApplication\\Olympia Library.csproj",
         "packagesPath": "C:\\Users\\barbu\\.nuget\\packages\\",
-        "outputPath": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final\\WebApplication\\obj\\",
+        "outputPath": "E:\\Coduri2.0\\Semestru 2 jale\\.WebApp final final final\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

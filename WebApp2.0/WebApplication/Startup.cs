@@ -33,9 +33,17 @@ namespace WebApplication
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddDefaultIdentity<ApplicationUser>(options =>
+            { options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+            })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -47,10 +55,12 @@ namespace WebApplication
             services.AddScoped<BranchService>();
             services.AddScoped<GenreService>();
             services.AddScoped<BorrowService>();
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider service)
         {
             if (env.IsDevelopment())
             {
@@ -79,6 +89,67 @@ namespace WebApplication
                 endpoints.MapRazorPages();
             });
 
+            CreateRoles(service);
+
         }
+
+
+
+
+
+        private void CreateRoles(IServiceProvider serviceProvider)
+        {
+
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+            Task<IdentityResult> roleResult;
+            string email = "admin@admin.com";
+
+            //Check that there is an Administrator role and create if not
+            Task<bool> hasAdminRole = roleManager.RoleExistsAsync("Admin");
+            hasAdminRole.Wait();
+
+            if (!hasAdminRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("Admin"));
+                roleResult.Wait();
+            }
+
+            //Check if the admin user exists and create it if not
+            //Add to the Administrator role
+            Task<ApplicationUser> testUser = userManager.FindByEmailAsync(email);
+            testUser.Wait();
+
+            if (testUser.Result == null)
+            {
+                ApplicationUser administrator = new ApplicationUser();
+                administrator.Email = email;
+                administrator.UserName = email;
+
+                Task<IdentityResult> newUser = userManager.CreateAsync(administrator, "AdminAdmin12#");
+                newUser.Wait();
+
+                if (newUser.Result.Succeeded)
+                {
+                    Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(administrator, "Admin");
+                    newUserRole.Wait();
+                }
+            }
+
+            //Check that there is an Reader role and create if not
+            Task<bool> hasReaderRole = roleManager.RoleExistsAsync("Reader");
+            hasAdminRole.Wait();
+
+            if (!hasAdminRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("Reader"));
+                roleResult.Wait();
+            }
+
+
+
+        }
+
+
     }
 }
