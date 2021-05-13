@@ -12,6 +12,6 @@ namespace Olympia_Library.Models.HomeModel
         public IEnumerable<Genre> Genres { get; set; }
         public IEnumerable<BookListingModel> BookListing { get; set; }
         public IEnumerable<BookListingModel> LatestAdditions { get; set; }
-
+        public string SearchQuery { get; set; }
     }
 }

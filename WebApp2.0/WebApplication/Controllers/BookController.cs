@@ -153,6 +153,7 @@ namespace WebApplication.Controllers
             return RedirectToAction("Detail", "Book", new {id = randomBookId });
         }
 
+
         [Authorize(Roles = "Admin")]
         public ActionResult GetAuthors()
         {
