@@ -1,6 +1,7 @@
 ﻿.genre-image{
     height:40px;
     width:40px;
+    background-size:cover;
 }
 
 .latestAdditions{
