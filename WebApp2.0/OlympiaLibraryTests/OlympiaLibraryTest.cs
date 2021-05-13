@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Olympia_Library.Data;
+using Olympia_Library.Models.GenreModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace OlympiaLibraryTests
     public class BookTests
     {
         AuthorService authorService;
+        GenreService genreService;
 
         Mock<IRepositoryWrapper> moqIRepositoryWrapper;
 
@@ -25,6 +27,7 @@ namespace OlympiaLibraryTests
             moqIRepositoryWrapper = new Mock<IRepositoryWrapper>() { CallBase = true };
 
             authorService = new AuthorService(moqIRepositoryWrapper.Object, null);
+            genreService = new GenreService(moqIRepositoryWrapper.Object, null);
         }
 
 
@@ -129,5 +132,52 @@ namespace OlympiaLibraryTests
         }
 
 
+        
+        [TestMethod]
+        public void TestAddGenre_TestEditGenre()
+        {
+
+            var numberOfGenresToCreate = 100;
+
+            List<Genre> genres = new List<Genre>();
+            moqIRepositoryWrapper.Setup(g => g.GenreRepository.Create(It.IsAny<Genre>()))
+                .Callback<Genre>(genre => genres.Add(genre));
+
+            moqIRepositoryWrapper.Setup(x => x.GenreRepository.FindByCondition(It.IsAny<System.Linq.Expressions.Expression<System.Func<Genre, bool>>>()))
+                .Returns(genres.AsQueryable());
+            moqIRepositoryWrapper.Setup(x => x.GenreRepository.Update(It.IsAny<Genre>()));
+
+            
+
+            for(int i = 0; i < numberOfGenresToCreate; i++)
+            {
+                NewGenreModel someGenre = new NewGenreModel
+                {
+                    Name = "Test Genre" + i.ToString(),
+                    ImageUrl = "",
+                    ImageFile = null,
+                    NewName = ""
+                };
+
+                genreService.AddGenre(someGenre);
+            }
+            //testing if the right number of genres has been created
+            Assert.AreEqual(numberOfGenresToCreate, genreService.FindGenreByCondition(g => !string.IsNullOrEmpty(g.Name)).Count);
+
+            for (int i = 0; i < numberOfGenresToCreate; i++)
+            {
+                NewGenreModel someGenreUpdate = new NewGenreModel
+                {
+                    Name = "",
+                    ImageUrl = "",
+                    ImageFile = null,
+                    NewName = "Test Genre" + i.ToString() + (i + 2).ToString()
+                };
+                //testing if the genre name has been updated correctly
+                Assert.AreEqual("Test Genre" + i.ToString() + (i + 2).ToString(), someGenreUpdate.Name);
+                
+            }
+
+        }
     }
 }
