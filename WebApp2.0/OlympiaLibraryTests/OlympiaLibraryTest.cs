@@ -160,9 +160,11 @@ namespace OlympiaLibraryTests
                 };
 
                 genreService.AddGenre(someGenre);
+                genreService.Save();
+                Assert.IsNotNull(genreService.FindGenreByCondition(g => g.Name == someGenre.Name));
             }
             //testing if the right number of genres has been created
-            Assert.AreEqual(numberOfGenresToCreate, genreService.FindGenreByCondition(g => !string.IsNullOrEmpty(g.Name)).Count);
+            
 
             for (int i = 0; i < numberOfGenresToCreate; i++)
             {
@@ -174,8 +176,12 @@ namespace OlympiaLibraryTests
                     NewName = "Test Genre" + i.ToString() + (i + 2).ToString()
                 };
                 //testing if the genre name has been updated correctly
-                Assert.AreEqual("Test Genre" + i.ToString() + (i + 2).ToString(), someGenreUpdate.Name);
+                genreService.UpdateGenre(someGenreUpdate);
+                genreService.Save();
                 
+                Assert.IsNotNull(genreService.FindGenreByCondition(g => g.Name == someGenreUpdate.NewName).FirstOrDefault());
+
+
             }
 
         }
