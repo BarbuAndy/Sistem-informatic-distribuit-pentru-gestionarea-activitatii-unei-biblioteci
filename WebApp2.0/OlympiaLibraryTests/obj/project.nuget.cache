@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g3j1OfgPB7fCZzh/TBML1PJeC8F3MkfqbvE5zIxYbyWfkxS9OO4h88hPOCMutIiveZ0u7/4PJuc5GQVWEGc50A==",
+  "dgSpecHash": "Opt18Z+3IIqeni4s9VulkF7tm8vM2SvQMo0BkEapDlaUpCLp0pL1nug1J3Q2kJHYOebGm00fQBlefajP092cwg==",
   "success": true,
   "projectFilePath": "E:\\facultate\\Proiect Databases\\WebApp2.0\\OlympiaLibraryTests\\OlympiaLibraryTests.csproj",
   "expectedPackageFiles": [
@@ -105,6 +105,9 @@
     "C:\\Users\\ionut\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\selenium.support\\3.141.0\\selenium.support.3.141.0.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\selenium.webdriver\\3.141.0\\selenium.webdriver.3.141.0.nupkg.sha512",
+    "C:\\Users\\ionut\\.nuget\\packages\\selenium.webdriver.chromedriver\\90.0.4430.2400\\selenium.webdriver.chromedriver.90.0.4430.2400.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\ionut\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

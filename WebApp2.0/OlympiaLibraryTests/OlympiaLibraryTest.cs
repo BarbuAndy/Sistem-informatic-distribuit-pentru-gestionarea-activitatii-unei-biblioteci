@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Olympia_Library.Data;
+using Olympia_Library.Models;
 using Olympia_Library.Models.GenreModel;
 using System;
 using System.Collections.Generic;
@@ -18,16 +21,33 @@ namespace OlympiaLibraryTests
     {
         AuthorService authorService;
         GenreService genreService;
-
+        BorrowService borrowService;
+        BranchService branchService;
+        BookService bookService;
+        IHostEnvironment hostEnvironment;
         Mock<IRepositoryWrapper> moqIRepositoryWrapper;
+
+        //public BookTests(AuthorService authorService, GenreService genreService, BorrowService borrowService, BranchService branchService, BookService bookService, IHostEnvironment hostEnvironment, Mock<IRepositoryWrapper> moqIRepositoryWrapper)
+        //{
+        //    this.authorService = authorService;
+        //    this.genreService = genreService;
+        //    this.borrowService = borrowService;
+        //    this.branchService = branchService;
+        //    this.bookService = bookService;
+        //    this.hostEnvironment = hostEnvironment;
+        //    this.moqIRepositoryWrapper = moqIRepositoryWrapper;
+        //}
 
         [TestInitialize]
         public void Initialize()
         {
             moqIRepositoryWrapper = new Mock<IRepositoryWrapper>() { CallBase = true };
-
+            
             authorService = new AuthorService(moqIRepositoryWrapper.Object, null);
+            bookService = new BookService(moqIRepositoryWrapper.Object, authorService, hostEnvironment, genreService);
             genreService = new GenreService(moqIRepositoryWrapper.Object, null);
+            branchService = new BranchService(moqIRepositoryWrapper.Object, null);
+            borrowService = new BorrowService(moqIRepositoryWrapper.Object, bookService, branchService);
         }
 
 
@@ -134,16 +154,19 @@ namespace OlympiaLibraryTests
 
         
         [TestMethod]
+        [HttpPost]
         public void TestAddGenre_TestEditGenre()
         {
 
-            var numberOfGenresToCreate = 100;
+            var numberOfGenresToCreate = 999;
 
             List<Genre> genres = new List<Genre>();
+
             moqIRepositoryWrapper.Setup(g => g.GenreRepository.Create(It.IsAny<Genre>()))
                 .Callback<Genre>(genre => genres.Add(genre));
 
-            moqIRepositoryWrapper.Setup(x => x.GenreRepository.FindByCondition(It.IsAny<System.Linq.Expressions.Expression<System.Func<Genre, bool>>>()))
+            moqIRepositoryWrapper.Setup(x => x.GenreRepository.FindByCondition(It.IsAny<System.Linq
+                .Expressions.Expression<System.Func<Genre, bool>>>()))
                 .Returns(genres.AsQueryable());
             moqIRepositoryWrapper.Setup(x => x.GenreRepository.Update(It.IsAny<Genre>()));
 
@@ -163,7 +186,7 @@ namespace OlympiaLibraryTests
                 genreService.Save();
                 Assert.IsNotNull(genreService.FindGenreByCondition(g => g.Name == someGenre.Name));
             }
-            //testing if the right number of genres has been created
+            
             
 
             for (int i = 0; i < numberOfGenresToCreate; i++)
@@ -181,9 +204,36 @@ namespace OlympiaLibraryTests
                 
                 Assert.IsNotNull(genreService.FindGenreByCondition(g => g.Name == someGenreUpdate.NewName).FirstOrDefault());
 
-
             }
 
         }
+
+        //[TestMethod]
+        //public void TestAddBook_TestUpdateBook()
+        //{
+        //    List<Book> books = new List<Book>();
+        //    int numberToCreate = 100;
+        //    moqIRepositoryWrapper.Setup(g => g.BookRepository.Create(It.IsAny<Book>()))
+        //        .Callback<Book>(book => books.Add(book));
+
+        //    moqIRepositoryWrapper.Setup(x => x.BookRepository.FindByCondition(It.IsAny<System.Linq.Expressions.Expression<System.Func<Book, bool>>>()))
+        //        .Returns(books.AsQueryable());
+        //    moqIRepositoryWrapper.Setup(x => x.BookRepository.Update(It.IsAny<Book>()));
+
+        //    for(int i = 0; i < numberToCreate; i++)
+        //    {
+        //        var newBook = new BookModel
+        //        {
+        //            Title = "Book" + i.ToString(),
+                    
+        //        };
+
+        //        bookService.AddBook(newBook);
+        //        bookService.Save();
+        //        Assert.IsNotNull(bookService.GetBooksByCondition(b => b.Title == newBook.Title).FirstOrDefault());
+        //    }
+        //}
+
+        
     }
 }

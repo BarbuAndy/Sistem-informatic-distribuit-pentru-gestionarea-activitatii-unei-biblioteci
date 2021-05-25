@@ -1750,3 +1750,5 @@ E:\Coduri2.0\Semestru 2 jale\.WebApp final final final\WebApplication\obj\Debug\
 E:\Coduri2.0\Semestru 2 jale\.WebApp final final final\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.dll
 E:\Coduri2.0\Semestru 2 jale\.WebApp final final final\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.pdb
 E:\Coduri2.0\Semestru 2 jale\.WebApp final final final\WebApplication\obj\Debug\netcoreapp3.1\Olympia Library.genruntimeconfig.cache
+E:\facultate\Proiect Databases\WebApp2.0\WebApplication\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+E:\facultate\Proiect Databases\WebApp2.0\WebApplication\bin\Debug\netcoreapp3.1\WebDriver.dll
