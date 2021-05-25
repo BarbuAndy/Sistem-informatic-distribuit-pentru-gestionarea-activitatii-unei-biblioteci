@@ -173,6 +173,25 @@ namespace WebApplication.Services
                       + Path.GetExtension(fileName);
         }
 
+        public bool IsBookInDatabase(string bookName)
+        {
+            if (repositoryWrapper.BookRepository.FindByCondition(b => b.Title.ToLower() == bookName.ToLower()).Any())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool IsBookInDatabase(int bookId)
+        {
+            if (repositoryWrapper.BookRepository.FindByCondition(b => b.BookId == bookId).Any())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
 
     }
 }

@@ -7,9 +7,11 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using WebApplication.Repositories;
+using WebApplication.Services;
 
 namespace OlympiaLibraryTests
 {
@@ -19,35 +21,36 @@ namespace OlympiaLibraryTests
         Mock<IRepositoryWrapper> moqIRepositoryWrapper;
         private IWebDriver driver;
         private UserManager<ApplicationUser> _userManager;
-        private IWebElement adminPrivilegesLink;
-       
+        
+        private  IHostEnvironment _hostEnvironment;
+
+
+
+        public UITests()
+        {
+        }
 
         [TestInitialize]
-        public void Initialize(UserManager<ApplicationUser> userManager)
-        {          
-            driver = new ChromeDriver();
-            _userManager = userManager;
+        public void Initialize()
+        {
             moqIRepositoryWrapper = new Mock<IRepositoryWrapper>() { CallBase = true };
-            adminPrivilegesLink = driver.FindElement(By.XPath("/html/body/header/nav/div/div[2]/ul[2]/li[6]/a"));
+            
+            driver = new ChromeDriver();           
+            
         }
 
         [TestMethod]
-        public void Test_Add_Book()
+        public void Test_Add_Book_Then_Delete_Book()
         {
 
             LoginAsAdmin();
 
-            List<Book> database = new List<Book>();
+            //Adding the book
 
-            moqIRepositoryWrapper.Setup(x => x.BookRepository.Create(It.IsAny<Book>()))
-                .Callback<Book>(book => database.Add(book));
-
-            moqIRepositoryWrapper.Setup(x => x.BookRepository.FindByCondition(It.IsAny<System.Linq.Expressions.Expression<System.Func<Book, bool>>>()))
-                .Returns(database.AsQueryable());
-
-            moqIRepositoryWrapper.Setup(x => x.BookRepository.Update(It.IsAny<Book>()));
+            driver.Navigate().GoToUrl("https://localhost:44365/");
+            var adminPrivilegesLink = driver.FindElement(By.XPath("/html/body/header/nav/div/div[2]/ul[2]/li[6]/a"));
+            
             adminPrivilegesLink.Click();
-
             //click add book
             driver.FindElement(By.XPath("/html/body/div/main/div/div[1]/div[1]/input")).Click();
             var bookTitleTextBox = driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input"));
@@ -63,8 +66,22 @@ namespace OlympiaLibraryTests
             bookTitleTextBox.SendKeys(bookTitle);
             bookAuthorTextBox.SendKeys(bookAuthor);
             bookGenreTextBox.SendKeys(bookGenre);
-            browseCoverInput.SendKeys("/images/bookCovers/unnamed.jpg");
+            browseCoverInput.SendKeys("E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\wwwroot\\images\\bookCovers\\unnamed.jpg");
+            submitButton.Click();
+            
+            
 
+            //Deleting the book
+
+            driver.Navigate().GoToUrl("https://localhost:44365/");
+            //clicking admin privileges
+            driver.FindElement(By.XPath("/html/body/header/nav/div/div[2]/ul[2]/li[6]/a")).Click();
+            //remove book
+            driver.FindElement(By.XPath("/html/body/div/main/div/div[1]/div[2]/input")).Click();
+            //insert book title
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input")).SendKeys("Test");
+            //submit
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[2]/input")).Click();
             
         }
 
