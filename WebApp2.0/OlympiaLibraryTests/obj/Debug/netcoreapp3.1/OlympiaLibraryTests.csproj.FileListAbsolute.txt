@@ -460,4 +460,3 @@ E:\facultate\Proiect Databases\WebApp2.0\OlympiaLibraryTests\obj\Debug\netcoreap
 E:\facultate\Proiect Databases\WebApp2.0\OlympiaLibraryTests\obj\Debug\netcoreapp3.1\OlympiaLibraryTests.genruntimeconfig.cache
 E:\facultate\Proiect Databases\WebApp2.0\OlympiaLibraryTests\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
 E:\facultate\Proiect Databases\WebApp2.0\OlympiaLibraryTests\bin\Debug\netcoreapp3.1\WebDriver.dll
-E:\facultate\Proiect Databases\WebApp2.0\OlympiaLibraryTests\bin\Debug\netcoreapp3.1\Olympia Library.StaticWebAssets.xml

@@ -46,7 +46,7 @@ namespace OlympiaLibraryTests
 
             LoginAsAdmin();
 
-            //Adding the book
+            //ADDING THE BOOK
 
             driver.Navigate().GoToUrl("https://localhost:44365/");
             var adminPrivilegesLink = driver.FindElement(By.XPath("/html/body/header/nav/div/div[2]/ul[2]/li[6]/a"));
@@ -66,9 +66,10 @@ namespace OlympiaLibraryTests
 
             /* - - - - - - - */
 
-            //ATENTIE!! Modifica pathul cu orice alta imagine de test pe care vrei sa o folosesti
+            //ATENTIE!! Modifica pathurile cu orice alte imagini de test pe care vrei sa le folosesti
             
             var imagePath = "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\wwwroot\\images\\bookCovers\\unnamed.jpg";
+            var newImagePath = "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\wwwroot\\images\\bookCovers\\Mihai_Eminescu_-_Poesii.jpg";
 
             /* - - - - - - - */
             bookTitleTextBox.SendKeys(bookTitle);
@@ -83,10 +84,32 @@ namespace OlympiaLibraryTests
             //testing if the page title appears in the book Index page
             Assert.IsTrue(driver.PageSource.Contains(bookTitle));
 
-            //Editing the book
-            driver.Navigate().GoToUrl("https://localhost:44365/Book/EditBook");
+            //EDITING THE BOOK
 
-            //Deleting the book
+
+            driver.Navigate().GoToUrl("https://localhost:44365/Book/EditBook");
+            var newBookTitle = "Test1";
+            var newBookAuthor = "Otilia Cazimir";
+            var newGenre = "Action";
+            //old title
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input")).SendKeys(bookTitle);
+            //new book title
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[2]/input")).SendKeys(newBookTitle);
+            //new author
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[3]/input")).SendKeys(newBookAuthor);
+            //new genre
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[4]/input")).SendKeys(newGenre);
+            //new book cover
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[5]/input")).SendKeys(newImagePath);
+            //submit
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[6]/input")).Click();
+
+            driver.Navigate().GoToUrl("https://localhost:44365/Book");
+            //testing if the page title appears in the book Index page
+            Assert.IsTrue(driver.PageSource.Contains(newBookTitle));
+
+
+            //DELETING THE BOOK
 
             driver.Navigate().GoToUrl("https://localhost:44365/");
             //clicking admin privileges
@@ -94,7 +117,7 @@ namespace OlympiaLibraryTests
             //remove book
             driver.FindElement(By.XPath("/html/body/div/main/div/div[1]/div[2]/input")).Click();
             //insert book title
-            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input")).SendKeys(bookTitle);
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input")).SendKeys(newBookTitle);
             //submit
             driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[2]/input")).Click();
 
