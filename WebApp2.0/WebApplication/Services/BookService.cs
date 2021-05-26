@@ -62,6 +62,11 @@ namespace WebApplication.Services
                     .FindByCondition(g => g.Name == book.Genre)
                     .FirstOrDefault().Id;
 
+            if(book.NewTitle != null)
+            {
+                updated_book.Title = book.NewTitle;
+            }
+
             if (book.Genre != null)
             {
                 updated_book.GenreId = _genreService.FindGenreByCondition(b => b.Name == book.Genre).First().Id;
@@ -69,7 +74,16 @@ namespace WebApplication.Services
 
             if (book.CoverImage != null)
             {
+                var deletedCoverPath = RelativeToAbsolutePath(updated_book.ImageUrl);
+                //File.SetAttributes(deletedCoverPath, FileAttributes.Normal);
+                if (File.Exists(deletedCoverPath) && !deletedCoverPath.Contains("defaultCover")) 
+                {
+                    
+                    File.Delete(deletedCoverPath);
+                }
+
                 updated_book.ImageUrl = UpdateBookCover(book.CoverImage);
+
             }
 
             repositoryWrapper.BookRepository.Update(updated_book);
@@ -86,6 +100,12 @@ namespace WebApplication.Services
             var deleted_book = GetBooksByCondition(b => b.Title == book.Title).First();
             if (deleted_book != null)
             {
+                var deletedCoverPath = RelativeToAbsolutePath(deleted_book.ImageUrl);
+                if (File.Exists(deletedCoverPath) && !deletedCoverPath.Contains("defaultCover"))
+                {
+                    File.Delete(deletedCoverPath);
+                }
+
                 repositoryWrapper.BookRepository.Delete(deleted_book);
             }
         }
@@ -191,6 +211,24 @@ namespace WebApplication.Services
             }
             else
                 return false;
+        }
+
+        private string RelativeToAbsolutePath(string relativePath)
+        {
+            var pathTokens = relativePath.Split("/");
+            string newRelativePath = "";
+            foreach(var token in pathTokens)
+            {
+                
+                newRelativePath += token;
+                newRelativePath += "\\";
+            }
+            newRelativePath = _hostEnvironment.ContentRootPath + newRelativePath;
+
+
+            newRelativePath = newRelativePath.Remove(newRelativePath.Length - 1);
+
+            return newRelativePath;
         }
 
     }

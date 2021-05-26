@@ -23,24 +23,28 @@
             <div class="col-md-4">
                 <form method="post" enctype="multipart/form-data" asp-controller="Book" asp-action="EditBook">
                     <div class="form-group">
-                        <label asp-for="Title" class="control-label"></label>
+                        <label asp-for="Title" class="control-label">Old Title</label>
                         <input asp-for="Title" id="title" class="form-control" required />
                     </div>
                     <div class="form-group">
-                        <label asp-for="AuthorName" class="control-label"></label>
+                        <label asp-for="NewTitle" class="control-label">New Title</label>
+                        <input asp-for="NewTitle" id="title" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AuthorName" class="control-label">New Author</label>
                         <input asp-for="AuthorName" id="authorName" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="Genre" class="control-label"></label>
+                        <label asp-for="Genre" class="control-label">New Genre</label>
                         <input asp-for="Genre" id="genre" class="form-control" />
                     </div>
 
 
                     <div class="form-group">
-                        <div class="col-md-4">
-                            <p>Upload Book Cover</p>
+                        
+                            <p>New Book Cover</p>
                             <input type="file" asp-for="CoverImage" />
-                        </div>
+                        
                     </div>
 
                     <div class="form-group">

@@ -38,9 +38,10 @@ namespace OlympiaLibraryTests
             driver = new ChromeDriver();           
             
         }
-
+        //ATENTIE!! Pentru acest test este nevoie ca cel ce il apeleaza sa nu fie logat in avans pe site, pentru 
+        //ca metoda LoginAsAdmin() sa functioneze
         [TestMethod]
-        public void Test_Add_Book_Then_Delete_Book()
+        public void Test_Add_Book_Edit_Then_Delete_Book()
         {
 
             LoginAsAdmin();
@@ -63,15 +64,27 @@ namespace OlympiaLibraryTests
             var bookAuthor = "Mihai Eminescu";
             var bookGenre = "Romance";
 
+            /* - - - - - - - */
+
+            //ATENTIE!! Modifica pathul cu orice alta imagine de test pe care vrei sa o folosesti
+            
+            var imagePath = "E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\wwwroot\\images\\bookCovers\\unnamed.jpg";
+
+            /* - - - - - - - */
             bookTitleTextBox.SendKeys(bookTitle);
             bookAuthorTextBox.SendKeys(bookAuthor);
             bookGenreTextBox.SendKeys(bookGenre);
-            browseCoverInput.SendKeys("E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\wwwroot\\images\\bookCovers\\unnamed.jpg");
+            
+            browseCoverInput.SendKeys(imagePath);
+
             submitButton.Click();
 
             driver.Navigate().GoToUrl("https://localhost:44365/Book");
             //testing if the page title appears in the book Index page
             Assert.IsTrue(driver.PageSource.Contains(bookTitle));
+
+            //Editing the book
+            driver.Navigate().GoToUrl("https://localhost:44365/Book/EditBook");
 
             //Deleting the book
 
