@@ -86,7 +86,6 @@ namespace OlympiaLibraryTests
 
             //EDITING THE BOOK
 
-
             driver.Navigate().GoToUrl("https://localhost:44365/Book/EditBook");
             var newBookTitle = "Test1";
             var newBookAuthor = "Otilia Cazimir";
@@ -123,7 +122,7 @@ namespace OlympiaLibraryTests
 
             driver.Navigate().GoToUrl("https://localhost:44365/Book");
             //testing if the page title has been deleted from the Index page
-            Assert.IsTrue(!driver.PageSource.Contains(bookTitle));
+            Assert.IsTrue(!driver.PageSource.Contains(newBookTitle));
         }
 
         [TestCleanup]
