@@ -87,7 +87,7 @@ namespace Olympia_Library.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser {PhoneNumber=Input.PhoneNumber, UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser {PhoneNumber=Input.PhoneNumber, UserName = Input.Email, Email = Input.Email};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

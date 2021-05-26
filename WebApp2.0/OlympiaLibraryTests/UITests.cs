@@ -16,7 +16,7 @@ using WebApplication.Services;
 namespace OlympiaLibraryTests
 {
     [TestClass]
-    public class UITests
+    public class UITests 
     {
         Mock<IRepositoryWrapper> moqIRepositoryWrapper;
         private IWebDriver driver;
@@ -68,8 +68,10 @@ namespace OlympiaLibraryTests
             bookGenreTextBox.SendKeys(bookGenre);
             browseCoverInput.SendKeys("E:\\facultate\\Proiect Databases\\WebApp2.0\\WebApplication\\wwwroot\\images\\bookCovers\\unnamed.jpg");
             submitButton.Click();
-            
-            
+
+            driver.Navigate().GoToUrl("https://localhost:44365/Book");
+            //testing if the page title appears in the book Index page
+            Assert.IsTrue(driver.PageSource.Contains(bookTitle));
 
             //Deleting the book
 
@@ -79,10 +81,13 @@ namespace OlympiaLibraryTests
             //remove book
             driver.FindElement(By.XPath("/html/body/div/main/div/div[1]/div[2]/input")).Click();
             //insert book title
-            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input")).SendKeys("Test");
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[1]/input")).SendKeys(bookTitle);
             //submit
             driver.FindElement(By.XPath("/html/body/div/main/div/div/div/form/div[2]/input")).Click();
-            
+
+            driver.Navigate().GoToUrl("https://localhost:44365/Book");
+            //testing if the page title has been deleted from the Index page
+            Assert.IsTrue(!driver.PageSource.Contains(bookTitle));
         }
 
         [TestCleanup]
