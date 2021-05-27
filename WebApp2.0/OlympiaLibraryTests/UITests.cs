@@ -44,7 +44,7 @@ namespace OlympiaLibraryTests
         public void Test_Add_Book_Edit_Then_Delete_Book()
         {
 
-            LoginAsAdmin();
+            LoginAs("admin@admin.com", "AdminAdmin12#");
 
             //ADDING THE BOOK
 
@@ -124,6 +124,31 @@ namespace OlympiaLibraryTests
             //testing if the page title has been deleted from the Index page
             Assert.IsTrue(!driver.PageSource.Contains(newBookTitle));
         }
+        //Pentru ca testul sa functioneze, trebuie ca si cartea "Moartea lui fulger sa se afle in baza de date"
+        [TestMethod]
+        public void Test_Book_Borrow()
+        {
+            var testBookName = "Moartea lui Fulger";
+            var testUsername = "test@gmail.com";
+            var testPassword = "Test1!";
+            LoginAs(testUsername, testPassword);
+
+            driver.Navigate().GoToUrl("https://localhost:44365/Book");
+            //go to first book detail - "Moartea lui Fulger"
+            driver.FindElement(By.XPath("/html/body/div/main/div/div/div[1]/div/div/div[1]/div[1]/a/img")).Click();
+            //blick borrow button
+            driver.FindElement(By.XPath("/html/body/div/main/div/div[1]/div[2]/span[3]/input")).Click();
+            //borrow from first branch
+            driver.FindElement(By.XPath("/html/body/div/main/div/table/tbody/tr[1]/td[3]/input")).Click();
+            //go to identity user profile
+            driver.FindElement(By.XPath("/html/body/header/nav/div/div[2]/ul[1]/li[1]/a")).Click();
+            //go to the borrowed books section
+            driver.Navigate().GoToUrl("https://localhost:44365/Identity/Account/Manage/BorrowedBooks");
+            //check if the book title is present in the borrowed books list
+            
+            
+            
+        }
 
         [TestCleanup]
         public void CleanUp()
@@ -133,18 +158,19 @@ namespace OlympiaLibraryTests
 
 
         
-        private void LoginAsAdmin()
+        private void LoginAs(string username, string password)
         {
+            string[] admin = { "admin@admin.com", "AdminAdmin12#" };
+
             driver.Navigate().GoToUrl("https://localhost:44365/");
             IWebElement loginPageLink = driver.FindElement(By.XPath("/html/body/header/nav/div/div[2]/ul[1]/li[2]/a"));
             loginPageLink.Click();
-            string userName = "admin@admin.com";
-            string password = "AdminAdmin12#";
+            
             var inputUserName = driver.FindElement(By.XPath("/html/body/div/main/div/div/div/div[2]/div/div/div/section/form/div[2]/input"));
             var inputPassword = driver.FindElement(By.XPath("/html/body/div/main/div/div/div/div[2]/div/div/div/section/form/div[3]/input"));
             inputUserName.Clear();
             inputPassword.Clear();
-            inputUserName.SendKeys(userName);
+            inputUserName.SendKeys(username);
             inputPassword.SendKeys(password);
 
             var loginButton = driver.FindElement(By.XPath("/html/body/div/main/div/div/div/div[2]/div/div/div/section/form/div[5]/b/button"));
@@ -152,5 +178,17 @@ namespace OlympiaLibraryTests
             
         }
 
+        private bool IsElementPresent(By by)
+        {
+            try
+            {
+                driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
     }
 }

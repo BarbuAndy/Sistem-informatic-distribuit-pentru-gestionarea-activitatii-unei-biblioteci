@@ -145,6 +145,7 @@ namespace WebApplication.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult RandomBook()
         {
 
@@ -153,6 +154,11 @@ namespace WebApplication.Controllers
             return RedirectToAction("Detail", "Book", new {id = randomBookId });
         }
 
+        //[AllowAnonymous]
+        //public IActionResult BookOfTheDay()
+        //{
+
+        //}
 
         [Authorize(Roles = "Admin")]
         public ActionResult GetAuthors()
